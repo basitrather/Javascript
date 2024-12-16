@@ -29,3 +29,32 @@ const age = [calAge(dob[1]), calAge(dob[2]), calAge(dob[dob.length - 1])];
 
 // Print the 'age' array containing calculated ages
 console.log(age);
+
+// EXERCISE WITH ARRAYS 
+// Function to calculate the tip based on the bill value
+const calcTip = function (bill) {
+    // If the bill is between 50 and 300, apply a 15% tip
+    if (bill >= 50 && bill <= 300)  
+      bill = bill * 0.15;
+    // Otherwise, apply a 20% tip
+    else    
+      bill = bill * 0.20;
+    
+    // Return the calculated tip
+    return bill;
+  };
+  
+  // Array holding different bill values
+  const bills = [125, 555, 44];
+  
+  // Calculate the tips for each bill and store them in an array
+  const tips = [calcTip(bills[0]), calcTip(bills[1]), calcTip(bills[2])];
+  
+  // Calculate the total amount (bill + tip) for each value and store in an array
+  const totals = [tips[0] + bills[0], tips[1] + bills[1], tips[2] + bills[2]];
+  
+  // Log the calculated tips to the console
+  console.log(tips);
+  
+  // Log the total amounts (bill + tip) to the console
+  console.log(totals);
