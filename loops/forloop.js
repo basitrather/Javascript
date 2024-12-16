@@ -41,9 +41,20 @@ for (let i = 0; i < info.length; i++) {
 
 //backward looping
 
+// Initialize an array of prime numbers
 const primeNumber = [2, 3, 5, 7, 11, 13];
-const backward =[];
-for(let i= primeNumber.length-1 ; i>=0 ; i--){
+
+// Create an empty array to store the reversed prime numbers
+const backward = [];
+
+// Start the loop from the last index of the primeNumber array
+// The loop will continue as long as i is greater than or equal to 0
+// This allows the loop to go through the array in reverse order
+for (let i = primeNumber.length - 1; i >= 0; i--) {
+    // Push each element from primeNumber array to the backward array
     backward.push(primeNumber[i]);
-};
+}
+
+// Log the reversed backward array to the console
 console.log(backward);
+
