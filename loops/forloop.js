@@ -58,3 +58,18 @@ for (let i = primeNumber.length - 1; i >= 0; i--) {
 // Log the reversed backward array to the console
 console.log(backward);
 
+// Function to generate a weather forecast string from an array
+const printForcast = function (arr) {
+    let str = ''; // Initialize an empty string to store the forecast
+    for (let i = 0; i < arr.length; i++) {
+        // Append each temperature and day information to the string
+        str += `...${arr[i]}C in ${i + 1} days`;
+    }
+    return str; // Return the complete forecast string
+};
+
+// Example array of temperatures
+const arr = [17, 21, 23];
+
+// Log the forecast string to the console
+console.log(printForcast(arr));
