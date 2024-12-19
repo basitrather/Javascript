@@ -79,13 +79,15 @@ Here are some of the main resources I use for learning JavaScript:
 - [JavaScript Cheat Sheet](https://www.codecademy.com/articles/cheat-sheet-javascript): A quick reference guide to JavaScript syntax.
 - [YouTube Channels](https://www.youtube.com/c/TraversyMedia): Channels that offer free tutorials on JavaScript and related technologies.
 
+## Contribution
+
+Since this repository is for personal use and tracking my learning progress, I am not currently accepting contributions. However, you are welcome to fork the repository and work with the code locally for your own learning purposes.
+
 ## License
 
 This repository is for personal use only. You are not permitted to modify, distribute, or use any part of this repository for commercial purposes.
 
 You may only view or clone the repository for personal use. You are not permitted to redistribute the code or make any modifications to it without express permission.
 
-## Contributing
 
-Since this repository is for personal use and tracking my learning progress, I am not currently accepting contributions. However, you are welcome to fork the repository and work with the code locally for your own learning purposes.
 
