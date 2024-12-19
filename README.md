@@ -66,7 +66,7 @@ The following topics are covered in this repository:
    ```bash
    git clone https://github.com/basitrather/Javascript.git
    
-   ## Resources and References
+## Resources and References
 
 Here are some of the main resources I use for learning JavaScript:
 
