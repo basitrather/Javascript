@@ -1,8 +1,4 @@
-Here’s the updated version with every command enclosed in parentheses for your **README.md** file:
-
----
-
-# Git and GitHub Commands Cheat Sheet
+Git and GitHub Commands Cheat Sheet
 
 A comprehensive list of essential Git and GitHub commands for managing repositories effectively.
 
@@ -95,5 +91,3 @@ A comprehensive list of essential Git and GitHub commands for managing repositor
   Temporarily saves uncommitted changes.  
 - **(`git stash pop`)**  
   Restores stashed changes.
-
----
