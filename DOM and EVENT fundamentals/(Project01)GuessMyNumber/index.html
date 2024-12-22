@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guess My Number!</title>
+  </head>
+  <body>
+    <header>
+      <ul>
+        <button class="btn reset">Again!</button>
+        <p>' Rules : Select number between 1-20 '</p>
+      </ul>
+      <div id="gameName"><h1>Guess My Number</h1></div>
+      <div id="logo">?</div>
+      <div class="line"></div>
+    </header>
+    <main>
+      <div class="left center">
+        <input type="number" />
+        <button class="btn check">Check</button>
+      </div>
+      <div class="right center">
+        <div id="result">Start guessing...</div>
+        <ul>
+          <li>Score: <span>20</span></li>
+          <li>Highscore: <span>0</span></li>
+        </ul>
+      </div>
+    </main>
+    <script src="/DOM and EVENT fundamentals/DOM basics/selectingElements.js"></script>
+  </body>
+</html>
