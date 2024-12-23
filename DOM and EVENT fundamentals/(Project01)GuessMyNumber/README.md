@@ -1,5 +1,3 @@
-NOTE : This project is not fully made it is just in development:/
-
 Guess the Number Game 🎮
 This project is a fun and interactive "Guess the Number" game. The player attempts to guess a randomly generated number within a set range. The game provides feedback after each guess, helping the player get closer to the correct number.
 

@@ -10,7 +10,7 @@
   <body>
     <header>
       <ul>
-        <button class="btn reset">Again!</button>
+        <button class="btn reset">reset!</button>
         <p>' Rules : Select number between 1-20 '</p>
       </ul>
       <div id="gameName"><h1>Guess My Number</h1></div>
@@ -19,17 +19,17 @@
     </header>
     <main>
       <div class="left center">
-        <input type="number" />
+        <input type="number" class="userInput" />
         <button class="btn check">Check</button>
       </div>
       <div class="right center">
-        <div id="result">Start guessing...</div>
+        <div class="result">Start guessing...</div>
         <ul>
-          <li>Score: <span>20</span></li>
-          <li>Highscore: <span>0</span></li>
+          <li>Score: <span class="score">20</span></li>
+          <li>Highscore: <span class="highScore">0</span></li>
         </ul>
       </div>
     </main>
-    <script src="/DOM and EVENT fundamentals/DOM basics/selectingElements.js"></script>
+    <script src="/DOM and EVENT fundamentals/(Project01)GuessMyNumber/script.js"></script>
   </body>
 </html>
