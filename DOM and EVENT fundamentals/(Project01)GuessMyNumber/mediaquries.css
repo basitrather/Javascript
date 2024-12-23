@@ -43,6 +43,8 @@
     width: 8rem;
     text-align: center;
     display: block;
+    height: 5rem;
+    font-size: 2rem;
   }
   .left button{
     font-size: 1rem
