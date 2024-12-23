@@ -14,11 +14,10 @@ body {
 }
 header {
   display: flex;
-  justify-content: space-between;
-  gap: 4rem;
+  justify-content: space-around;
   align-items: center;
   flex-direction: column;
-  height: 40vh;
+  height: 30vh;
 }
 header ul {
   display: flex;
@@ -40,7 +39,7 @@ header ul {
 #gameName h1 {
   font-size: 2rem;
 }
-#logo {
+#correctAnswer {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -48,16 +47,6 @@ header ul {
   color: #222;
   padding: 15px 30px;
   background-color: #fff;
-}
-.line {
-  position: relative;
-}
-#logo::before {
-  background-color: #fff;
-  content: "";
-  height: 5px;
-  width: 100vw;
-  position: absolute;
 }
 main {
   display: flex;
@@ -90,6 +79,7 @@ main {
 }
 .result {
   font-size: 2rem;
+  text-align: center;
 }
 main ul {
   display: flex;
@@ -100,3 +90,4 @@ ul li {
   font-size: 1.5rem;
   list-style-type: none;
 }
+

@@ -1,0 +1,56 @@
+/* mediaqueries */
+@media screen and (max-width: 950px) {
+  header ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  header {
+    justify-content: space-around;
+  }
+  .left input {
+    padding: 1rem;
+    width: 15rem;
+    text-align: center;
+    display: block;
+    margin-bottom: 3rem;
+  }
+  .left button{
+    font-size: 1rem
+  }
+  .right {
+    flex: 1 1 20rem;
+  }
+  .right .result{
+    font-size: 1.4rem;
+  }
+  .right ul li{
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 540px) {
+  header ul p {
+    font-size: 1rem;
+    text-align: center;
+  }
+  #gameName h1 {
+    font-size: 1.2rem;
+  }
+  .reset {
+    font-size: 1.5rem;
+  }
+  .left input {
+    padding: .5rem;
+    width: 8rem;
+    text-align: center;
+    display: block;
+  }
+  .left button{
+    font-size: 1rem
+  }
+  .right .result{
+    font-size: 1rem;
+  }
+  .right ul li{
+    font-size: .8rem;
+  }
+}
