@@ -10,7 +10,7 @@ document.querySelector('.reset').addEventListener('click', function () {
 });
 //Event listner which checks the userInput is correct to the random number generated
 document.querySelector('.check').addEventListener('click', function () {
-    if (score < 0) {
+    if (score <= 0) {
         result.textContent = 'you lost the game try again';
         return;
     }
