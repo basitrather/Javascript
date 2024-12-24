@@ -1,12 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MODAL WINDOW</title>
-    <link rel="stylesheet" href="/style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>This is a simple mondal window project</h1>
+      <p>Press on the any button below to get the modal window!</p>
+    </header>
+    <main>
+      <div class="buttons">
+        <button class="show-modal">button 1</button>
+        <button class="show-modal">button 2</button>
+        <button class="show-modal">button 3</button>
+      </div>
+        <div class=" modal hidden">
+          <span class="hide-modal">&times;</span>
+          <h5>modal1</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+            aliquid a quaerat dolorem labore maiores, culpa placeat. Accusamus
+            quae, aut quod, recusandae quidem numquam alias quia quas esse
+            similique obcaecati!
+          </p>
+        </div>
+        <div class="modal hidden">
+          <span class="hide-modal">&times;</span>
+          <h5>modal2</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+            aliquid a quaerat dolorem labore maiores, culpa placeat. Accusamus
+            quae, aut quod, recusandae quidem numquam alias quia quas esse
+            similique obcaecati!
+          </p>
+        </div>
+        <div class="modal hidden">
+          <span class="hide-modal">&times;</span>
+          <h5>modal3</h5>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+            aliquid a quaerat dolorem labore maiores, culpa placeat. Accusamus
+            quae, aut quod, recusandae quidem numquam alias quia quas esse
+            similique obcaecati!
+          </p>
+        </div>
+      </div>
+    </main>
+    <div class="overlay hidden"></div>
     <script src="/script.js"></script>
-</body>
+  </body>
 </html>
