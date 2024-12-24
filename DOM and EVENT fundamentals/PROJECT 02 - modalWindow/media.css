@@ -1,0 +1,42 @@
+@media screen and (max-width: 1000px) {
+    .modal {
+      width: 60vw;
+      min-height: 50vh;
+    }
+    header h1 {
+      font-size: 1.7rem;
+    }
+  }
+  
+  @media screen and (max-width: 610px) {
+    .modal {
+      width: 70vw;
+    }
+    header h1 {
+      font-size: 1.4rem;
+    }
+    header p {
+      font-size: 0.8rem;
+    }
+  }
+  
+  @media screen and (max-width: 425px) {
+    .modal {
+      width: 80vw;
+    }
+    header h1 {
+      font-size: 1.4rem;
+    }
+    header p {
+      font-size: 0.8rem;
+    }
+    .modal h5 {
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    .modal p {
+      font-size: 0.8rem;
+    }
+  }
+  
