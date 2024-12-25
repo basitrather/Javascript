@@ -1,4 +1,5 @@
 ## About the Project:
+[Preview project](https://modalwindowbybasit.netlify.app)
 This is a simple project to demonstrate the creation and functionality of modal windows using HTML, CSS, and JavaScript. You can use this modal code in your own project to easily implement modal windows with a clean user interface.
 
 ### How to Use:
