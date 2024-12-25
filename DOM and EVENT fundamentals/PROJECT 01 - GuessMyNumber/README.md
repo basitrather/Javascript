@@ -1,6 +1,6 @@
 Guess the Number Game 🎮
 
-[Game link](https://guessmynumberbybasit.netlify.app)
+[Preview project(https://guessmynumberbybasit.netlify.app)
 
 This project is a fun and interactive "Guess the Number" game. The player attempts to guess a randomly generated number within a set range. The game provides feedback after each guess, helping the player get closer to the correct number.
 
