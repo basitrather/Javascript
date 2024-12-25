@@ -21,3 +21,24 @@ console.log(methodInObject.info); // note this will only work if the method is a
 // this keyword:
 // Inside a method, 'this' refers to the object that the method is a part of.
 // Outside of an object it points towards the global object that is window objects
+
+
+// Borrowing methods from another object
+const person = {
+  name: 'Alice',
+  greet: function() {
+    console.log(`Hello, ${this.name}`);
+  }
+};
+
+const anotherPerson = {
+  name: 'Bob'
+};
+
+// Using call() to borrow the greet method from person and apply it to anotherPerson
+person.greet.call(anotherPerson); // Output: Hello, Bob
+
+//The call() method allows you to change the reference of the this keyword,
+//setting it to the object you pass as an argument to call(). 
+//So instead of referring to the original object (in your case, obj), 
+//it refers to the object you specify (in your case, newObj).
