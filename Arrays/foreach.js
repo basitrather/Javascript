@@ -14,7 +14,7 @@ numbers.forEach(function (element, index) {
   console.log(`Element: ${element}, Index: ${index}`);
 });
 
- I Learned forEach:
+//  I Learned forEach:
 
 // In simple terms, the `forEach` method helps in iterating over an array, and for each element,
 // a function is executed. I learned that `forEach` automatically handles the iteration,
