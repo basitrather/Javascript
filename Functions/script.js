@@ -1,6 +1,5 @@
 // A callback function is a function that is passed as an argument to another function and is executed after the 
 // first function has finished its execution. 
-// A callback function is typically used in asynchronous operations or in array methods like forEach, map, and filter.
 
 // Example of a callback function in action:
 
@@ -21,6 +20,16 @@ greetUser("Basit", showMessage);
 
 // In this example, `showMessage` is passed as a callback to the `greetUser` function. 
 // When `greetUser` finishes greeting, it calls `showMessage` to display a second message.
+
+Example of Callback in Event Handling:
+
+// HTML event handling often uses callback functions.
+// Example: A button click event
+
+document.getElementById('myButton').addEventListener('click', function() {
+  console.log("Button clicked!");
+})
+
 
 // How I Learned Callback Function:
 
