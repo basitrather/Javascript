@@ -4,7 +4,6 @@ Welcome to my JavaScript learning repository! This repository documents my journ
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Folder Structure](#folder-structure)
 - [Learning Topics](#learning-topics)
 - [How to Use This Repository](#how-to-use-this-repository)
 - [Resources and References](#resources-and-references)
@@ -14,20 +13,6 @@ Welcome to my JavaScript learning repository! This repository documents my journ
 ## Introduction
 
 This repository is a personal collection of JavaScript exercises, examples, and notes. It’s structured to help me systematically learn JavaScript, starting from the basics and gradually covering more advanced topics. I will continually update the repository as I progress, adding more topics and examples for better understanding.
-
-## Folder Structure
-
-This repository is organized into folders, each focusing on a specific JavaScript concept:
-
-- **Arrays**: Contains examples and exercises related to array manipulation in JavaScript.
-- **Loops**: Includes code samples demonstrating various looping constructs.
-- **Objects**: Features examples on object creation and manipulation.
-- **Functions**: Provides examples on how to create and use functions in JavaScript.
-- **Conditionals**: Contains examples of how to use `if`, `else`, `switch`, and ternary operators.
-
-Each folder contains:
-1. `.js` files with practical examples and exercises.
-2. A `README.md` file providing an overview of the concepts covered within the folder.
 
 ## Learning Topics
 
