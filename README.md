@@ -8,7 +8,6 @@ Welcome to my JavaScript learning repository! This repository documents my journ
 - [How to Use This Repository](#how-to-use-this-repository)
 - [Resources and References](#resources-and-references)
 - [Contributions](#contributions)
-- [License](#license)
 
 ## Introduction
 
@@ -67,12 +66,5 @@ Here are some of the main resources I use for learning JavaScript:
 ## Contributions
 
 Since this repository is for personal use and tracking my learning progress, I am not currently accepting contributions. However, you are welcome to fork the repository and work with the code locally for your own learning purposes.
-
-## License
-
-This repository is for personal use only. You are not permitted to modify, distribute, or use any part of this repository for commercial purposes.
-
-You may only view or clone the repository for personal use. You are not permitted to redistribute the code or make any modifications to it without express permission.
-
 
 
