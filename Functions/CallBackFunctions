@@ -1,0 +1,49 @@
+// What is a Callback Function?
+// ---------------------------
+// A callback function is a function that is passed as an argument to another function. 
+// It is called (or "called back") by the other function when needed.
+// The purpose of a callback is to execute some code after an operation is completed or to customize how a function behaves.
+
+// Example 1: Simple Callback Function
+function greet(name, callback) {
+  console.log(`Hello, ${name}`);
+  callback(); // Calling the callback function
+}
+
+// Defining the callback function
+function sayGoodbye() {
+  console.log("Goodbye!");
+}
+
+// Passing the callback function as an argument
+greet("Alice", sayGoodbye);
+
+// Output:
+// Hello, Alice
+// Goodbye!
+
+// Example 2: Callback in Array Methods (like forEach)
+const numbers = [1, 2, 3];
+
+// Callback function to process each element
+function multiplyByTwo(element, index, array) {
+  console.log(`Element at index ${index} is ${element}`);
+  console.log(`Result after multiplying by 2: ${element * 2}`);
+}
+
+// Using the callback function with forEach
+numbers.forEach(multiplyByTwo);
+
+// Output:
+// Element at index 0 is 1
+// Result after multiplying by 2: 2
+// Element at index 1 is 2
+// Result after multiplying by 2: 4
+// Element at index 2 is 3
+// Result after multiplying by 2: 6
+
+// How I Learned It
+// ----------------
+// 1. I understood that a callback function is a regular function passed as an argument to another function.
+// 2. The callback function gets executed at a specific point in the parent function.
+// 3. Real-life example: Event listeners use callback functions, such as when you click a button, the event handler is a callback function.
