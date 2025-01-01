@@ -1,49 +1,45 @@
-// What is a Callback Function?
-// ---------------------------
-// A callback function is a function that is passed as an argument to another function. 
-// It is called (or "called back") by the other function when needed.
-// The purpose of a callback is to execute some code after an operation is completed or to customize how a function behaves.
+// Documentation: Understanding callback functions with processArray example
 
-// Example 1: Simple Callback Function
-function greet(name, callback) {
-  console.log(`Hello, ${name}`);
-  callback(); // Calling the callback function
+// Callback function: Multiplies a number by 2
+function multiplyByTwo(number) {
+  return number * 2;
 }
 
-// Defining the callback function
-function sayGoodbye() {
-  console.log("Goodbye!");
+// Callback function: Multiplies a number by 3
+function multiplyByThree(number) {
+  return number * 3;
 }
 
-// Passing the callback function as an argument
-greet("Alice", sayGoodbye);
+// Function that accepts an array and a callback function
+// This processes the array using the callback function
+function processArray(array, callback) {
+  let result = []; // Array to store processed results
 
-// Output:
-// Hello, Alice
-// Goodbye!
+  // Using forEach to iterate over the array
+  array.forEach(function (item) {
+    // Call the callback function on each item
+    const processedValue = callback(item);
+    result.push(processedValue); // Store the processed value in the result array
+  });
 
-// Example 2: Callback in Array Methods (like forEach)
-const numbers = [1, 2, 3];
-
-// Callback function to process each element
-function multiplyByTwo(element, index, array) {
-  console.log(`Element at index ${index} is ${element}`);
-  console.log(`Result after multiplying by 2: ${element * 2}`);
+  return result; // Return the processed result array
 }
 
-// Using the callback function with forEach
-numbers.forEach(multiplyByTwo);
+// Example usage:
+const numbers = [1, 2, 3]; // Array to process
 
-// Output:
-// Element at index 0 is 1
-// Result after multiplying by 2: 2
-// Element at index 1 is 2
-// Result after multiplying by 2: 4
-// Element at index 2 is 3
-// Result after multiplying by 2: 6
+// Processing with multiplyByTwo callback
+const doubledNumbers = processArray(numbers, multiplyByTwo);
+// Output: [2, 4, 6]
 
-// How I Learned It
-// ----------------
-// 1. I understood that a callback function is a regular function passed as an argument to another function.
-// 2. The callback function gets executed at a specific point in the parent function.
-// 3. Real-life example: Event listeners use callback functions, such as when you click a button, the event handler is a callback function.
+// Processing with multiplyByThree callback
+const tripledNumbers = processArray(numbers, multiplyByThree);
+// Output: [3, 6, 9]
+
+// Explanation of how it works:
+// 1. `processArray` takes two arguments: an array and a callback function.
+// 2. It iterates through the array using `forEach`.
+// 3. On each iteration, the callback function is executed with the current array item.
+// 4. The callback function processes the item (e.g., multiplies it by 2 or 3).
+// 5. The processed value is stored in the `result` array.
+// 6. Finally, `processArray` returns the `result` array with all the processed items.
