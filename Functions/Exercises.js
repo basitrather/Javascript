@@ -1,4 +1,4 @@
-// Documentation: Understanding callback functions with processArray example
+//Exercise : Understanding callback functions with processArray example
 
 // Callback function: Multiplies a number by 2
 function multiplyByTwo(number) {

@@ -21,7 +21,7 @@ greetUser("Basit", showMessage);
 // In this example, `showMessage` is passed as a callback to the `greetUser` function. 
 // When `greetUser` finishes greeting, it calls `showMessage` to display a second message.
 
-Example of Callback in Event Handling:
+//Example of Callback in Event Handling:
 
 // HTML event handling often uses callback functions.
 // Example: A button click event
