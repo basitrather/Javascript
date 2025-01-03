@@ -32,9 +32,11 @@ This repository is a personal collection of JavaScript exercises, examples, and 
 
 ### [3. Functions](Functions/)  
 - Focuses on function types and concepts.  
-    - [`Exercises.js`](Functions/Exercises.js): Function-based exercises.  
-    - [`callBackFunctions.js`](Functions/callBackFunctions.js): Examples of callback functions.  
-    - [`closureFunction.js`](Functions/closureFunction.js): Introduction to closures.  
+    - [`arrowFunctions.js`](Functions/arrowFunctions.js): Introduction to arrow functions.  
+    - [`callBackFunctions.js`](Functions/callBackFunctions.js): What is callBack functions and examples of it
+    - [`closureFunction.js`](Functions/closureFunction.js): Introduction to closure function and its examples.  
+    - [`functionExpression.js`](Functions/functionExpression.js): Understanding function expressions.  
+    - [`regularFunction.js`](Functions/regularFunction.js): Basic regular function examples.   
 
 ### [4. Loops](loops/)  
 - Demonstrates different types of loops with examples.  
