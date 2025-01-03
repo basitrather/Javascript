@@ -4,45 +4,71 @@ Welcome to my JavaScript learning repository! This repository documents my journ
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Learning Topics](#learning-topics)
+- [Repository Contents](#Repository-Contents)
 - [How to Use This Repository](#how-to-use-this-repository)
 - [Resources and References](#resources-and-references)
 - [Contributions](#contributions)
 
 ## Introduction
 
-This repository is a personal collection of JavaScript exercises, examples, and notes. It’s structured to help me systematically learn JavaScript, starting from the basics and gradually covering more advanced topics. I will continually update the repository as I progress, adding more topics and examples for better understanding.
+This repository is a personal collection of JavaScript exercises, examples, and notes. It’s structured to help me systematically learn JavaScript, starting from the basics and gradually covering more advanced topics. I will continually update the repository as I progress, adding more topics and examples for better understanding.  
 
-## Learning Topics
+## Repository Contents  
 
-The following topics are covered in this repository:
+### [1. Arrays](Arrays/)  
+- Contains exercises and examples for working with arrays, including methods like `forEach` and `map`.  
+    - [`array.js`](Arrays/array.js): Basic array examples.  
+    - [`arraymethods.js`](Arrays/arraymethods.js): Demonstrations of array methods.  
+    - [`foreach.js`](Arrays/foreach.js): Examples of `forEach` loop usage.  
+    - [`mapMethod.js`](Arrays/mapMethod.js): Use cases for the `map` method.  
 
-### 1. **Variables and Data Types**
-   - Understanding how to declare variables (`let`, `const`, `var`).
-   - The different data types in JavaScript (strings, numbers, booleans, objects, arrays, etc.).
-   NOTE: This section is not updated yet!
-### 2. **Operators**
-   - Arithmetic, comparison, and logical operators.
-   - Assignment operators and their usage.
-   NOTE: This section is not updated yet!
-### 3. **Control Flow**
-   - How to control the flow of execution using conditionals like `if`, `else`, `switch`, and the ternary operator.
-   - Introduction to loops such as `for`, `while`, and `for...in`.
-   NOTE: This section is not updated yet!
-### 4. **Functions**
-   - Writing and using functions.
-   - Function parameters, return values, and scope.
-   NOTE: This section is not updated yet!
-### 5. **Objects**
-   - Creating and manipulating JavaScript objects.
-   - Understanding object properties and methods.
+### [2. DOM and Event Fundamentals](DOM%20and%20EVENT%20fundamentals/DOM%20basics/)  
+- Explores DOM manipulation and event handling basics.  
+    - [`README.md`](DOM%20and%20EVENT%20fundamentals/DOM%20basics/README.md): Overview of DOM basics.  
+    - [`classes.js`](DOM%20and%20EVENT%20fundamentals/DOM%20basics/classes.js): Working with classes in the DOM.  
+    - [`eventListeners.js`](DOM%20and%20EVENT%20fundamentals/DOM%20basics/eventListeners.js): Examples of event listeners.  
+    - [`index.html`](DOM%20and%20EVENT%20fundamentals/DOM%20basics/index.html): Sample HTML file.  
+    - [`style.css`](DOM%20and%20EVENT%20fundamentals/DOM%20basics/style.css): Styling for DOM examples.  
 
-### 6. **Arrays**
-   - Creating arrays and using built-in array methods (`push()`, `pop()`, `map()`, etc.).
-   - Iterating over arrays and manipulating array elements.
+### [3. Functions](Functions/)  
+- Focuses on function types and concepts.  
+    - [`Exercises.js`](Functions/Exercises.js): Function-based exercises.  
+    - [`callBackFunctions.js`](Functions/callBackFunctions.js): Examples of callback functions.  
+    - [`closureFunction.js`](Functions/closureFunction.js): Introduction to closures.  
 
-### 7. **Loops**
-   - Using different loops to iterate over data (for, while, forEach, etc.).
+### [4. Loops](loops/)  
+- Demonstrates different types of loops with examples.  
+    - [`exercise.js`](loops/exercise.js): Loop exercises.  
+    - [`forloop.js`](loops/forloop.js): Examples of `for` loop.  
+    - [`whileloop.js`](loops/whileloop.js): Examples of `while` loop.  
+
+### [5. Objects](objects/)  
+- Covers object properties, methods, and the `this` keyword.  
+    - [`objects.js`](objects/objects.js): Basic object examples.  
+    - [`thiskeyword.js`](objects/thiskeyword.js): Explanation of the `this` keyword.  
+
+### [6. Projects](#Projects)  
+
+#### [Project 01 - Guess My Number](PROJECT%2001%20-%20GuessMyNumber/)  
+- A simple game to guess a randomly generated number.  
+    - [`README.md`](PROJECT%2001%20-%20GuessMyNumber/README.md): Overview of the project.  
+    - [`index.html`](PROJECT%2001%20-%20GuessMyNumber/index.html): Game's HTML file.  
+    - [`script.js`](PROJECT%2001%20-%20GuessMyNumber/script.js): JavaScript logic.  
+    - [`style.css`](PROJECT%2001%20-%20GuessMyNumber/style.css): Basic styling.  
+
+#### [Project 02 - Modal Window](PROJECT%2002%20-%20modalWindow/)  
+- A project demonstrating modal window functionality.  
+    - [`README.md`](PROJECT%2002%20-%20modalWindow/README.md): Overview of the project.  
+    - [`index.html`](PROJECT%2002%20-%20modalWindow/index.html): HTML structure.  
+    - [`script.js`](PROJECT%2002%20-%20modalWindow/script.js): JavaScript logic.  
+    - [`style.css`](PROJECT%2002%20-%20modalWindow/style.css): Styling.  
+
+### [7. Git Commands](GitCommands.md)  
+- Notes and references for Git commands.  
+
+---  
+
+This repository is a work in progress and serves as a personal reference for JavaScript concepts and projects.  
 
 ## How to Use This Repository
 
