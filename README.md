@@ -65,6 +65,10 @@ This repository is a personal collection of JavaScript exercises, examples, and 
     - [`script.js`](PROJECT%2002%20-%20modalWindow/script.js): JavaScript logic.  
     - [`style.css`](PROJECT%2002%20-%20modalWindow/style.css): Styling.  
 
+### [7. Problem-Solving-Quests](Problem-Solving-Quests/)  
+- Tracks learning and problem-solving progress through coding exercises and challenges.  
+    - Contains problem sets and solutions to practice and improve JavaScript skills.
+
 ### [7. Git Commands](GitCommands.md)  
 - Notes and references for Git commands.  
 
