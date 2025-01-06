@@ -64,3 +64,26 @@ console.log(books[1].details());
 //CSS for Beginners by Jane Smith
 
 //because each object in the books array has a details() method. When details() is called on an object, it accesses the object’s properties (title and author) using this. This ensures that the correct properties are returned for each object when calling the details() method.
+
+let items = [
+  { name: 'Apple', price: 1 },
+  { name: 'Banana', price: 0.5 },
+  { name: 'Cherry', price: 2 }
+];
+
+function calculateTotal(arr, callback) {
+  let total = 0;
+  arr.forEach(item => {
+    total += callback(item);
+  });
+  return total;
+}
+
+function getPrice(item) {
+  return item.price;
+}
+
+console.log(calculateTotal(items, getPrice));
+
+//output: 3.5
+//The calculateTotal function iterates over the items array and uses the getPrice callback to extract the price of each item. The total is calculated by adding the prices: 1 (Apple) + 0.5 (Banana) + 2 (Cherry) = 3.5. This total is then returned and logged to the console.
