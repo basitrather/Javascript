@@ -45,3 +45,22 @@ myFunction();
 
 //output: 15
 // The inner can access the outer because its closure
+
+let book = {
+  title: "JavaScript Basics",
+  author: "John Doe",
+  details: function() {
+    return `${this.title} by ${this.author}`;
+  }
+};
+
+let books = [book, { title: "CSS for Beginners", author: "Jane Smith", details: function() { return `${this.title} by ${this.author}`; } }];
+
+console.log(books[0].details());
+console.log(books[1].details());
+
+//Output: 
+//JavaScript Basics by John Doe
+//CSS for Beginners by Jane Smith
+
+//because each object in the books array has a details() method. When details() is called on an object, it accesses the object’s properties (title and author) using this. This ensures that the correct properties are returned for each object when calling the details() method.
