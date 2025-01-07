@@ -25,3 +25,20 @@ console.log(obj.a); // ?
 
 //          ----------------------------
 // Question 02
+function createMultiplier(factor) {
+  return function (num) {
+    return num * factor;
+  };
+}
+
+const multiplier3 = createMultiplier(3);
+const multiplier5 = createMultiplier(5);
+
+const arr = [1, 2, 3, 4];
+const result = arr.map((multiplier3, multiplier5) => {
+  return multiplier3(multiplier5);
+});
+
+console.log(result);
+// output:
+//it will throw a syntax error because .map only takes one argument as a callback function
