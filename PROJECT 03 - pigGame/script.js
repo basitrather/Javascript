@@ -54,9 +54,11 @@ holdScore.addEventListener("click", function () {
     score[activeplayer];
 
   // check if the active player wins or not
-  if (score[activeplayer] >= 10) {
+  if (score[activeplayer] >= 50) {
     document.querySelector(`.score${activeplayer}`).textContent = "Winner!🥇";
-    document.getElementById(`p${activeplayer}`).classList.add("winnerplayer ");
+    document.getElementById(`p${activeplayer}`).classList.add("winnerplayer");
+    holdScore.disabled = true;
+    dicebtn.disabled = true;
   }
   // reset the current score
   document.getElementById(
@@ -65,4 +67,6 @@ holdScore.addEventListener("click", function () {
   CurrentScore = 0;
   // change the active player
   activeplayer = activeplayer === 0 ? 1 : 0;
+  leftside.classList.toggle("activeplayer");
+  rightside.classList.toggle("activeplayer");
 });
