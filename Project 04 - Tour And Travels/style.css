@@ -1,0 +1,196 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+li {
+  list-style: none;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  color: #00000070;
+}
+a {
+  text-decoration: none;
+}
+#landing-section {
+  background: url(/Images/vikram-kumar-2Iu2FuXvAYo-unsplash.jpg);
+  background-repeat: no-repeat;
+  background-position: 0 -10rem;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 25%;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 10vh;
+  /* background-color: rgba(255, 255, 255, 0.34); */
+}
+h1 {
+  width: 40%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  word-spacing: 5px;
+}
+ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 30%;
+}
+nav ul a {
+  font-size: 1.5rem;
+  color: rgba(0, 0, 0, 0.591);
+}
+button a {
+  font-size: 1rem;
+  color: black;
+}
+button {
+  background-color: transparent;
+  padding: 0.5rem 2rem;
+  border-radius: 10px;
+}
+main {
+  height: 40vh;
+  width: 100%;
+  /* background-color: rgba(255, 68, 0, 0.527); */
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: column;
+  padding: 0 30%;
+  text-align: center;
+}
+main h5 {
+  font-size: 3rem;
+}
+main p {
+  font-size: 1.2rem;
+  color: rgba(0, 0, 0, 0.566);
+}
+
+#offers-section {
+  min-height: 150vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  align-items: center;
+  flex-direction: column;
+  background-color: #f0f0f0;
+  padding: 5rem 0;
+}
+.offerSec h6 {
+  font-size: 4rem;
+}
+.offerSec ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 20%;
+  background-color: #ffffff;
+  box-shadow: 0px 0px 6px #00000036;
+  border-radius: 10px;
+}
+.offerSec a {
+  font-size: 1.2rem;
+  color: #00000080;
+}
+.cards {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: #fff;
+  width: 20rem;
+  height: fit-content;
+  background-color: rgb(255, 255, 255);
+  border-radius: 50px;
+  padding-top: 1rem;
+  padding-left: 1rem;
+}
+.image-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+.card img {
+  height: 200px;
+  width: 230px;
+  border-radius: 50px;
+}
+.date {
+  font-size: 1.5rem;
+  position: absolute;
+  transform: rotate(90deg);
+  transform-origin: center;
+  width: 50%;
+  right: -45px;
+  top: 50%;
+  color: rgba(0, 0, 0, 0.5);
+  word-spacing: 2px;
+}
+.card-content {
+  padding: 15px 20px;
+}
+
+.tag {
+  background: #f3c8e6;
+  color: #ad3c84;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 10px;
+  margin-right: 8px;
+}
+
+.duration {
+  color: #888;
+  font-size: 13px;
+}
+
+.title {
+  font-size: 20px;
+  margin: 10px 0 5px;
+}
+
+.price {
+  color: #333;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.book-btn {
+  background: #eef4ff;
+  color: #3366ff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+.familyCard {
+  display: none;
+}
+.coupleCard {
+  display: none;
+}
