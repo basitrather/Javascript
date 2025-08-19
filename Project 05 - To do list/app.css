@@ -15,8 +15,8 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 2rem;
-  transition: all 600ms ease-in-out;
 }
+
 h1 {
   text-transform: capitalize;
   letter-spacing: 2px;
@@ -92,7 +92,7 @@ li {
 }
 .titleColor {
   color: rgb(234, 0, 255);
-  scale: 1.2;
+  scale: 1.3;
   transition: all 600ms ease-in-out;
 }
 .removeImage {
@@ -103,12 +103,14 @@ li {
 /* javaScript added element styling  */
 .liContainer {
   width: 30vw;
-  height: 8vh;
+  height: 5vh;
   display: flex;
   border-radius: 7px;
   justify-content: space-between;
   align-items: center;
-  background-color: #aa00ff;
+  background: linear-gradient(135deg, rgb(61, 255, 226) 0%, #aa00ff 100%);
+  color: #ffffff;
+  box-shadow: black 1px 1px 20px;
   padding: 0 1rem;
 }
 .my-checkbox {
@@ -121,8 +123,8 @@ li {
   transition: all 500ms ease-in-out;
 }
 .my-checkbox:checked {
-  background-color: #000000;
-  scale: 1.2;
+  background-color: #aa00ff;
+  scale: 1.1;
   border-radius: 16px;
   border-color: #000000;
   position: relative;
@@ -133,14 +135,14 @@ li {
   color: white;
   font-size: 19px;
   position: absolute;
-  left: 3px;
+  left: 5px;
   top: 0px;
 }
 .completedTask {
   text-decoration: line-through;
   color: rgba(255, 0, 0, 0.717);
   scale: 0.6;
-  color: rgb(201, 160, 160) !important;
+  color: rgb(0, 0, 0) !important;
   transition: all 500ms ease-in-out;
 }
 .li {
@@ -153,4 +155,17 @@ li {
   width: 30px;
   height: 30px;
   cursor: pointer;
+}
+.lightBackground {
+  background: url(/Images/lightModeBg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 600ms ease-in-out;
+}
+.darkBackground {
+  background-image: url(/Images/darkModeBg.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

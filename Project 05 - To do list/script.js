@@ -18,7 +18,7 @@ const addTaskBtn = document.getElementById("submitTask");
 const modeChangeBtn = document.getElementById("modeChange");
 const taskField = document.getElementById("tasks");
 const emptyImage = document.querySelector(".emptyImg");
-
+const bodyBackground = document.body;
 function addTask() {
   if (!input.value.trim()) {
     return;
@@ -49,19 +49,26 @@ function addTask() {
   deleteTask.className = "deleteOption";
   listDiv.appendChild(deleteTask);
 
+  //  delete option event listner
   deleteTask.addEventListener("click", () => {
     listDiv.remove();
   });
+
   // clicking on checkbox grades out the task.
   checkBox.addEventListener("click", () => {
     tasklist.classList.toggle("completedTask");
+    taskField.appendChild(listDiv);
   });
-
   // this resets the value in the input field
   input.value = "";
 }
 
 function toggleMode() {
+  // bgc image change
+  if (bodyBackground.classList.contains("lightBackground")) {
+    bodyBackground.classList.toggle("darkBackground");
+  }
+
   // Dark Mode Btn
   if (modeChangeBtn.src.includes("/Images/darkMode.png")) {
     modeChangeBtn.src = "/Images/lightMode.png";
