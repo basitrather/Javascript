@@ -102,7 +102,7 @@ li {
 
 /* javaScript added element styling  */
 .liContainer {
-  width: 30vw;
+  width: 50vw;
   height: 5vh;
   display: flex;
   border-radius: 7px;
@@ -169,3 +169,53 @@ li {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
+@media (max-width: 1000px) {
+  .liContainer {
+    width: 50vw;
+  }
+  .li {
+    font-size: 1.4rem;
+  }
+}
+@media (max-width: 800px) {
+  .liContainer {
+    width: 70vw;
+  }
+  .li {
+    font-size: 1.3rem;
+  }
+}
+@media (max-width: 700px) {
+  .liContainer {
+    width: 80vw;
+  }
+  .li {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 550px) {
+  .input {
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .inputClass {
+    height: 40px;
+    width: 20rem;
+  }
+  .liContainer {
+    width: 90vw;
+  }
+  .li {
+    font-size: 1rem;
+  }
+}
+/* @media (max-width: 440px) {
+  .liContainer {
+    width: 80vw;
+  }
+      .li {
+    font-size: .7rem;
+  }
+} */

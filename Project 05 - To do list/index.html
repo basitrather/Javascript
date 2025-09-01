@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="app.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,24 +12,29 @@
       rel="stylesheet"
     />
   </head>
-  <body>
-    <header>
-      <h3>Pick some new habits to get started</h3>
-    </header>
-    <main>
-      <h6>RECOMMENDED</h6>
-      <ul>
-        <li class="lists">Exercise</li>
-        <li class="lists">Read books</li>
-        <li class="lists">Meditate</li>
-        <li class="lists">Plan meals</li>
-        <li class="lists">Water plants</li>
-        <li class="lists">Journal</li>
-        <li class="lists">Stretch for 15 mins</li>
-        <li class="lists">Review goals before</li>
-      </ul>
-      <button class="signin"><a href="/app.html">Continue</a></button>
-    </main>
+  <body class="lightBackground">
+    <h1>to-do web app</h1>
+    <div class="input" id="addTask">
+      <input
+        id="inputField"
+        class="inputClass"
+        type="text"
+        maxlength="36"
+        placeholder="what are you goals today :/"
+        autocomplete="off"
+        spellcheck="false"
+        required
+      />
+      <button class="button">
+        <img id="submitTask" src="/Images/addTask.png" alt="" />
+      </button>
+      <button class="button">
+        <img id="modeChange" src="/Images/darkMode.png" alt="" />
+      </button>
+    </div>
+    <ul id="tasks">
+      <img class="emptyImg" src="/Images/emptyTasks.png" alt="NO Task" />
+    </ul>
     <script src="/script.js"></script>
   </body>
 </html>
