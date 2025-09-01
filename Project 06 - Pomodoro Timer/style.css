@@ -1,0 +1,128 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.app {
+  background: url(/images/lightMode.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  gap: 2rem;
+  transition: all 500ms ease-in-out;
+}
+body {
+  font-family: "Ubuntu", sans-serif;
+}
+h1 {
+  font-size: 4rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: 700;
+  /* background-color: #0080ff5d; */
+  border-radius: 19px;
+  padding: 10px;
+  transition: all 500ms ease-in-out;
+}
+.controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+#display {
+  font-size: 2.5rem;
+  font-weight: 900;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: #5574ffd7;
+  transition: all 500ms ease-in-out;
+}
+#minutes {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 0.5rem 1.5rem;
+  font-size: 1rem;
+  box-shadow: black 1px 1px 10px;
+  border-radius: 7px;
+  border: none;
+}
+button {
+  padding: 0.5rem 1.5rem;
+  border-radius: 7px;
+  cursor: pointer;
+  border: none;
+  box-shadow: black 1px 1px 10px;
+}
+
+#start {
+  background-color: #27ae60;
+}
+#pause {
+  background-color: #e67e22;
+}
+#reset {
+  background-color: #c0392b;
+}
+.h1Change {
+  color: white;
+  transition: all 500ms ease-in-out;
+}
+.minutesChange {
+  background-color: #f8f9fa !important;
+  color: black !important;
+}
+.bgChange {
+  background: url(/images/darkmode.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 500ms ease-in-out;
+}
+.displayChange {
+  background-color: #ffffffc5 !important;
+  transition: all 500ms ease-in-out !important;
+}
+.startChange {
+  background-color: #2ecc71 !important;
+}
+.pauseChange {
+  background-color: #f39c12 !important;
+}
+.resetChange {
+  background-color: #e74c3c !important;
+}
+
+/* For Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* For Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* mediaQueries for the page */
+@media (max-width: 700px) {
+  h1 {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 520px) {
+  h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+  .controls {
+    flex-wrap: wrap;
+  }
+}
