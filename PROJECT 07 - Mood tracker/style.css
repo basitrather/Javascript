@@ -10,8 +10,6 @@ body {
   height: 100%;
   width: 100%;
   font-family: "Poppins", sans-serif;
-  /* background: url(/images/bg1.jpg);     */
-  /* background: url(/images/bg2.jpg);     */
   background: url(/images/bg3.jpg);
   background-position: center;
   background-repeat: no-repeat;
@@ -44,7 +42,7 @@ nav h1 {
 }
 main {
   display: flex;
-  justify-content: space-around;
+  justify-content: start;
   align-items: center;
   flex-direction: column;
   height: 50vh;
@@ -62,6 +60,7 @@ main h5 {
   align-items: center;
   justify-content: center;
   gap: 1rem;
+  flex-wrap: wrap;
 }
 .mood {
   height: 95px;
@@ -118,4 +117,34 @@ td {
 }
 .moodSelected {
   background: #f35200;
+}
+
+@media (max-width: 550px) {
+  main {
+    height: 60vh;
+  }
+  nav img {
+    width: auto;
+  }
+  nav h1 {
+    width: auto;
+    font-size: 1.5rem;
+  }
+  main h5 {
+    font-size: 2rem;
+  }
+  .mood {
+    height: 70px;
+    width: 70px;
+  }
+  th {
+    padding: 10px 30px;
+  }
+  td {
+    padding: 10px 30px;
+  }
+  section {
+    height: fit-content;
+    padding-top: 5vh;
+  }
 }
