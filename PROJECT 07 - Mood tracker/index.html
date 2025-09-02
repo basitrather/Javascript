@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MoodTracker</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav>
+      <img src="/images/Logo.png" alt="Logo" class="logo" />
+      <h1>My Mood Tracker</h1>
+    </nav>
+    <main>
+      <h5>How Are You Feeling Today?</h5>
+      <ul id="mood-menu">
+        <li class="mood">
+          <img src="/images/happy.png" alt="" /><span>Happy</span>
+        </li>
+        <li class="mood">
+          <img src="/images/neutral.png" alt="" /><span>Nuetral</span>
+        </li>
+        <li class="mood">
+          <img src="/images/sad.png" alt="" /><span>sad</span>
+        </li>
+        <li class="mood">
+          <img src="/images/angry.png" alt="" /><span>Angry</span>
+        </li>
+        <li class="mood">
+          <img src="/images/excited.png" alt="" /><span>Exicted</span>
+        </li>
+      </ul>
+      <button class="submit">Save Mood</button>
+    </main>
+    <section id="mood-history">
+      <h2>Your past moods:</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Mood</th>
+          </tr>
+        </thead>
+        <tbody id="history-body">
+          <!-- <tr>
+            <td>2025-09-01</td>
+            <td>😊 Happy</td>
+          </tr> -->
+        </tbody>
+      </table>
+    </section>
+  </body>
+</html>

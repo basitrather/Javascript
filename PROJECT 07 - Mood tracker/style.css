@@ -1,0 +1,108 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  /* background: url(/images/bg1.jpg);     */
+  /* background: url(/images/bg2.jpg);     */
+  background: url(/images/bg3.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+nav {
+  height: 10vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  align-items: center;
+  background-color: #ff8132e4;
+  border-radius: 0px 0px 30px 30px;
+  box-shadow: 0px 10px 100px crimson;
+}
+nav img {
+  height: 50px;
+  width: 50px;
+  color: #dfff00;
+}
+nav h1 {
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  word-spacing: 1px;
+  font-weight: 600;
+  color: #000000;
+}
+main {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  height: 50vh;
+  padding-top: 10vh;
+  gap: 1rem;
+}
+main h5 {
+  font-size: 2.5rem;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+#mood-menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.mood {
+  height: 95px;
+  width: 95px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  flex-direction: column;
+  border: 2px solid black;
+  background-color: #ff8132e4;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.submit {
+  padding: 1rem 4rem;
+  border-radius: 10px;
+  color: black;
+  cursor: pointer;
+  background: #f35200;
+  border: none;
+  box-shadow: 1px 1px 10px #f39223;
+  color: black;
+  font-weight: 500;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  transition: all 500ms ease-in-out;
+}
+.submit:hover {
+  scale: 1.1;
+  color: white;
+}
+#mood-history {
+  height: 40vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+th {
+  padding: 15px 50px;
+  border: 2px solid rgb(255, 255, 255);
+}
+td {
+  border: 2px solid rgb(255, 255, 255);
+  padding: 10px 50px;
+}
