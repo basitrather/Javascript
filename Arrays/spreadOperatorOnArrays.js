@@ -34,4 +34,4 @@ const fulName = function (fName, mName, lName) {
 };
 
 let details = [prompt("firstName"), prompt("middleName"), prompt("lastName")]; // it will return an array;
-fulName(...details); //this will unpack the array elements individuly and sent them as seperate arguments to the fullName function
+fulName(...details); //this will unpack the array elements individuly and sent them as seperate arguments to the fullName function!

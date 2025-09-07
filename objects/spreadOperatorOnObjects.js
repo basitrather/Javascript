@@ -1,8 +1,11 @@
 // Objects
-const newRestaurant = { foundedIn: 1998, ...restaurant, founder: "Guiseppe" };
-console.log(newRestaurant);
-
-const restaurantCopy = { ...restaurant };
-restaurantCopy.name = "Ristorante Roma";
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+const restaurant = {
+  starter: ["frenchFries", "Spring Rolls", "Wonton Soup"],
+  main: ["pizza", "burger", "chowmen"],
+}; //object
+const newRestaurant = {
+  foundedIn: 1998,
+  ...restaurant,
+  founder: "Guiseppe",
+}; // ...restaurant is a spread operator it spreads the properties of the restraunt in a new object
+console.log(newRestaurant); //
