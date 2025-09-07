@@ -11,3 +11,8 @@ console.log(0 || undefined || 0 || 99 || "basit" || 11); //99Because it’s the 
 // && operator checks if all the values are true if it finds one falsy value it returns falsy value
 console.log("shjdb" && 0); //0 because falsy
 console.log("nasd" && 22 && undefined); //undefined because falsy
+
+// ?? nulish Operator : it works almost the same as OR but it accepts the 0 or "" as truthy value but dont accept null and undefined
+
+console.log("" ?? undefined); // it will empty string because it recognise it as truthy
+console.log(undefined ?? 87); // 87
