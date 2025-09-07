@@ -16,3 +16,17 @@ console.log("nasd" && 22 && undefined); //undefined because falsy
 
 console.log("" ?? undefined); // it will empty string because it recognise it as truthy
 console.log(undefined ?? 87); // 87
+
+//logical assigment operators
+// it is used to assign the value to the varibale if the current value is truthy
+// example
+const arr = [undefined, 4, 9, 7];
+
+// OR assigment Operator
+console.log((arr[2] ||= 99)); //9 because it stopped because the value of arr[2] is true
+
+// AND assignment Operator
+console.log((arr[3] &&= 99)); //99 because the arr[3] is a truthy value
+
+// NULLISH assignment Operator
+console.log((arr[0] ??= 88)); //88 because arr[0] is a truthy value if it was other than undefined and null the log will have been that varibale because to ??
