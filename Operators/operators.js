@@ -22,11 +22,16 @@ console.log(undefined ?? 87); // 87
 // example
 const arr = [undefined, 4, 9, 7];
 
-// OR assigment Operator
+// OR assigment Operator: Assigns only if the left side is falsy (false, 0, "", null, undefined, NaN).
 console.log((arr[2] ||= 99)); //9 because it stopped because the value of arr[2] is true
 
-// AND assignment Operator
+// AND assignment Operator: Assigns only if the left side is truthy.
 console.log((arr[3] &&= 99)); //99 because the arr[3] is a truthy value
 
-// NULLISH assignment Operator
-console.log((arr[0] ??= 88)); //88 because arr[0] is a truthy value if it was other than undefined and null the log will have been that varibale because to ??
+// NULLISH assignment Operator : it assigns a value to a variable only if that variable is currently null or undefined.
+console.log((arr[0] ??= 88)); //88 It assigns 88 to a[0] because a[0] is undefined.
+
+// TRICK
+//||= → works with falsy.
+//&&= → works with truthy.
+// ??= → works with null/undefined only.
