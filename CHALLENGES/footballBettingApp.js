@@ -64,22 +64,22 @@ const substitute = ["Thiago", "Coutinho", "Perisic"];
 const players1Final = [...player1, ...substitute];
 
 const {
-  odds: { team1, draw, team2 },
+  odds: { team1, x, team2 },
 } = game;
-
+let scorers = {};
 const printGoals = function (scored, ...players) {
   players.forEach((player) => {
     let totalsGoals = 0;
     let goalScorer = "";
-
     scored.forEach((goal) => {
       if (player === goal) {
         totalsGoals++;
         goalScorer = player;
+        scorers[goalScorer] = totalsGoals;
       }
     });
     if (totalsGoals > 0) {
-      console.log(`${player} scored ${totalsGoals} goals`);
+      console.log(`${goalScorer} scored ${totalsGoals} goals`);
     }
   });
   console.log(`${scored.length} goals were scored in total`);
@@ -90,3 +90,46 @@ printGoals(scored, ...allPlayers);
 
 team1 < team2 && console.log(`${game.team1} is the winner of the season`);
 team2 < team1 && console.log(`${game.team2} is the winner of the season`);
+
+/*
+Challenge #2 
+continue with our football betting app! Keep using the 'game' variable from before.
+
+1. already did that
+
+2. Use a loop to calculate the average odd and log it to the console
+
+3. Print the 3 odds to the console, but in a nice formatted way, exactly like this: 
+Odd of victory Bayern Munich: 1.33 
+Odd of draw: 3.25 
+Odd of victory Borrussia Dortmund: 6.5 
+Get the team names directly from the game object, don't hardcode them 
+(except for "draw"). Hint: Note how the odds and the game objects have the 
+same property names 
+
+4. Bonus: Create an object called 'scorers' which contains the names of the 
+players who scored as properties, and the number of goals as the value. In this game, it will look like this: 
+  { 
+      Gnarby: 1, 
+      Hummels: 1, 
+      Lewandowski: 2 
+  }
+*/
+
+const oddsArr = Object.values(game.odds);
+let sum = 0;
+let avg = 0;
+let totalAvg;
+
+for (const [index, value] of oddsArr.entries()) {
+  sum += value;
+  avg++;
+  if (index == oddsArr.length - 1) {
+    totalAvg = sum / avg;
+    console.log(`Total average odd is: ${totalAvg}`);
+  }
+}
+console.log(
+  `Odds of victory ${game.team1}\nOdd of draw:${totalAvg}\nOdd of victory ${game.team2}: ${team2} `
+);
+console.log(scorers);
