@@ -1,9 +1,10 @@
 "use strict";
-//Sets and maps were introduced in ES6 in 2020, before that js had only objects and arrays
-//sets: a collection of unique data that is immutable or can never be changed.
+//Sets and maps were introduced in ES6 in 2020, before that javaScript had only objects and arrays
+//set: a collection of unique data that is immutable or can never be changed.
 // A set can hold any data that can be itterared like: string,array etc.
 // A set cannot have duplicate values it consider duplicate values as one.
 // sets have no index, meaning they are orderless
+// Whenever we spread a set by (....) it turns into an array
 
 //Declearing a set and some methods of sets
 
@@ -25,9 +26,9 @@ console.log(arraySet);
 
 /*Retrive data from set: There is no way to retrive data back from the set.
 we can only check if the data is in the set or not by the 'has' method.
-if we want to retrive data then array is the best dataType to go for*/
+if we want to retrive data then array is the best datatype to go for*/
 
-//Example: if we want to delete the duplicates in the set.
+//Example: if we want to delete the duplicates in an array.
 const members = ["basit", "taureed", "tehsheem", "basit", "haseeb", "mohsin"]; // Duplicates
-const newMemebers = [...new Set(members)]; // created a Set with an array (removed duplicates), then spread it back into a new array.Then stored in the decleared varibale.
-console.log(newMemebers); //Updated array.
+const memebersUpdated = [...new Set(members)]; // created a Set with an array (removed duplicates), then spread it back into a new array.Then stored in the decleared varibale.
+console.log(memebersUpdated); //Updated array.
