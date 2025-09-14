@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
+  background: url(/backGroundImages/lightModeTheme.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 500ms ease-in-out;
+}
+.mode {
+  position: absolute;
+  top: 10%;
+  height: 50px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  word-spacing: 2px;
+  transition: all 500ms ease-in-out;
+}
+#inputExpenses {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+input {
+  height: 3vh;
+}
+input:focus {
+  outline: none;
+}
+.label {
+}
+#description {
+  margin-left: 1rem;
+  width: 30vw;
+}
+#amount {
+  margin-left: 2.5rem;
+  width: 30vw;
+}
+#expenses {
+  margin-left: 1.8rem;
+  width: 30vw;
+  height: 3vh;
+}
+.addExpenseBtn {
+  padding: 0.5rem 1.5rem;
+  border-radius: 10px;
+  border: 1px solid black;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+table {
+  border-collapse: collapse;
+}
+th {
+  padding: 15px 50px;
+  border: 3px solid #000000;
+}
+td {
+  border: 3px solid #000000;
+  padding: 10px 50px;
+}
+.delete-btn {
+  padding: 0.3rem 1rem;
+  border-radius: 10px;
+}
+/* darkmode styling */
+.changeBackGroundImage {
+  background: url(/backGroundImages/DarkModeTheme.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 500ms ease-in-out;
+}
+.heading {
+  color: white;
+  transition: all 500ms ease-in-out;
+}
+.label {
+  color: white;
+  transition: all 500ms ease-in-out;
+}

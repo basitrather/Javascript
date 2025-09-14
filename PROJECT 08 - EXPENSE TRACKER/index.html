@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EXPENSE TRACKER</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <img class="mode" src="/icons/darkmodeIcon.png" alt="" />
+    <h1>expense tracker</h1>
+    <div id="inputExpenses">
+      <div class="descriptionField">
+        <label for="description">Description</label>
+        <input id="description" type="text" required />
+      </div>
+      <div class="amountField">
+        <label for="amount">Amount</label>
+        <input id="amount" type="number" required />
+      </div>
+      <div class="Catagory">
+        <label for="expenses">Catagory</label>
+        <select id="expenses" name="expense">
+          <option value="Food">Food</option>
+          <option value="Travel/Transport">Travel/Transport</option>
+          <option value="Bills/Utilities">Bills/Utilities</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Health/Medical">Health/Medical</option>
+          <option value="Work/Office">Work/Office</option>
+          <option value="Education">Education</option>
+          <option value="Other/Miscellaneous">Other/Miscellaneous</option>
+        </select>
+      </div>
+      <button type="submit" class="addExpenseBtn">Add Expense</button>
+    </div>
+
+    <table border="">
+      <thead>
+        <tr>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Category</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="expense-table-body">
+        <!-- <tr>
+          <td>Pizza</td>
+          <td>250</td>
+          <td>Food</td>
+          <td><button class="delete-btn">Delete</button></td>
+        </tr> -->
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="3" style="text-align: right; font-weight: bold">
+            Total:
+          </td>
+          <td id="total-amount">0</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <script src="/script.js"></script>
+  </body>
+</html>
