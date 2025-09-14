@@ -1,5 +1,4 @@
-// A callback function is a function that is passed as an argument to another function and is executed after the 
-// first function has finished its execution. 
+// A callback function is a function that is passed as an argument to another function and is executed after the first function has finished its execution.
 
 // Example of a callback function in action:
 
@@ -16,9 +15,8 @@ greetUser("Basit", showMessage);
 
 // OUTPUT:
 // Hello, Basit
-// Welcome to JavaScript learning!
 
-// In this example, `showMessage` is passed as a callback to the `greetUser` function. 
+// In this example, `showMessage` is passed as a callback to the `greetUser` function.
 // When `greetUser` finishes greeting, it calls `showMessage` to display a second message.
 
 //Example of Callback in Event Handling:
@@ -26,19 +24,15 @@ greetUser("Basit", showMessage);
 // HTML event handling often uses callback functions.
 // Example: A button click event
 
-document.getElementById('myButton').addEventListener('click', function() {
+document.getElementById("myButton").addEventListener("click", function () {
   console.log("Button clicked!");
-})
-
+});
 
 // How I Learned Callback Function:
 
-// A callback function is a function that is passed as an argument to another function and is executed when 
-// the first function has finished its task. This allows for more flexible, reusable, and modular code.
-// While the callback function is executed, the main function doesn't "wait" for it to finish but continues executing 
-// other tasks (especially in asynchronous code).
+// A callback function is a function that is passed as an argument to another function and is executed when the first function has finished its task. This allows for more flexible, reusable, and modular code.
+// While the callback function is executed, the main function doesn't "wait" for it to finish but continues executing other tasks (especially in asynchronous code).
 
-//-----------------------------------------------
 //Exercise : Understanding callback functions with processArray example
 
 // Callback function: Multiplies a number by 2
@@ -77,10 +71,21 @@ const doubledNumbers = processArray(numbers, multiplyByTwo);
 const tripledNumbers = processArray(numbers, multiplyByThree);
 // Output: [3, 6, 9]
 
-// Explanation of how it works:
-// 1. `processArray` takes two arguments: an array and a callback function.
-// 2. It iterates through the array using `forEach`.
-// 3. On each iteration, the callback function is executed with the current array item.
-// 4. The callback function processes the item (e.g., multiplies it by 2 or 3).
-// 5. The processed value is stored in the `result` array.
-// 6. Finally, `processArray` returns the `result` array with all the processed items.
+// callBack Function example
+const oneWord = function (string) {
+  //low OrderFnction
+  return string.replaceAll(" ", "").toLowerCase();
+};
+const firstUpperWord = function (string) {
+  //low OrderFnction
+  const [first, ...restWords] = string.split(" ");
+  return [first.toUpperCase(), ...restWords].join(" ");
+};
+const transformer = function (string, callFunction) {
+  //higher OrderFnction
+  console.log(`orginal: ${string}`);
+  console.log(`transformed: ${callFunction(string)}`);
+  console.log(`Transformed by: ${callFunction.name}`);
+};
+transformer("basit has done BCA", firstUpperWord);
+transformer("tehsheem has done Btech(CSE)", oneWord);
