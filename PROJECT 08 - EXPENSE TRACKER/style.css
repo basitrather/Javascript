@@ -45,8 +45,6 @@ input {
 input:focus {
   outline: none;
 }
-.label {
-}
 #description {
   margin-left: 1rem;
   width: 30vw;
@@ -98,4 +96,50 @@ td {
 .label {
   color: white;
   transition: all 500ms ease-in-out;
+}
+.borderStyling {
+  border: 3px solid #ffffff;
+  color: #ffffff;
+}
+
+/* mediaQueries */
+@media (max-width: 750px) {
+  th {
+    padding: 15px 30px;
+  }
+  td {
+    padding: 10px 30px;
+  }
+}
+@media (max-width: 550px) {
+  th {
+    padding: 15px 10px;
+  }
+  td {
+    padding: 10px 10px;
+  }
+}
+@media (max-width: 400px) {
+  th {
+    padding: 10px 5px;
+  }
+  td {
+    padding: 10px 5px;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  .addExpenseBtn {
+    padding: 0.24rem 1rem;
+    font-size: 0.7rem;
+    font-weight: 500;
+  }
+}
+@media (max-width: 350px) {
+  th {
+    padding: 10px 2px;
+  }
+  td {
+    padding: 10px 2px;
+  }
 }
