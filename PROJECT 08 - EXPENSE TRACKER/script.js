@@ -56,6 +56,7 @@ const createElements = function (object) {
     );
     localStorage.setItem("userData", JSON.stringify(objectArray));
   });
+  return [td1, td2, td3, td4];
 };
 //display the saved data
 const displayData = function () {
@@ -72,15 +73,22 @@ const saveData = function () {
 };
 
 const getData = function () {
+  let tempArr = [];
   userInputs.description = description.value;
   userInputs.amount = Number(amount.value);
   userInputs.expenseType = expenseType.value;
   if (userInputs.description === "" || userInputs.amount == "") {
     alert("Enter the description and amount fields");
   } else {
-    createElements(userInputs);
+    tempArr = createElements(userInputs);
   }
   saveData();
+  //Toggle Between DarkMode And Light mode whenever the tableData gets created
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+    tempArr.forEach((element) => {
+      element.classList.toggle("borderStyling");
+    });
+  }
 };
 
 submitExpenseBtn.addEventListener("click", () => {
