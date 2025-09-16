@@ -1,12 +1,18 @@
+@font-face {
+  font-family: "primaryFont";
+  src: url("/fonts/Merriweather-VariableFont_opsz\,wdth\,wght.ttf")
+    format("truetype");
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
-  height: 100vh;
-  width: 100vw;
-  font-family: sans-serif;
+  font-family: primaryFont;
+}
+.webapp {
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,6 +32,7 @@ body {
   cursor: pointer;
 }
 h1 {
+  margin-top: 20vh;
   font-size: 2rem;
   text-transform: uppercase;
   letter-spacing: 3px;
@@ -67,15 +74,26 @@ input:focus {
   font-weight: 600;
 }
 table {
+  margin-bottom: 5vh;
   border-collapse: collapse;
+  max-height: 200vh;
 }
 th {
-  padding: 15px 50px;
   border: 3px solid #000000;
+  word-wrap: break-word;
+  padding: 15px;
 }
 td {
   border: 3px solid #000000;
-  padding: 10px 50px;
+  width: 200px; /* fixed column width */
+  min-width: 200px; /* prevent shrinking */
+  max-width: 200px; /* keeps it stable */
+  overflow-wrap: break-word; /* wrap long words */
+  word-break: normal; /* avoid breaking too early */
+  white-space: normal; /* allow wrapping */
+  padding: 10px 10px;
+  text-align: center; /* horizontal */
+  vertical-align: middle;
 }
 .delete-btn {
   padding: 0.3rem 1rem;
@@ -108,7 +126,9 @@ td {
     padding: 15px 30px;
   }
   td {
-    padding: 10px 30px;
+    width: 100px; /* fixed column width */
+    min-width: 100px; /* prevent shrinking */
+    max-width: 100px; /* keeps it stable */
   }
 }
 @media (max-width: 550px) {
@@ -125,6 +145,12 @@ td {
   }
   td {
     padding: 10px 5px;
+    width: 70px; /* fixed column width */
+    min-width: 70px; /* prevent shrinking */
+    max-width: 50px; /* keeps it stable */
+  }
+  .delete-btn {
+    padding: 0.3rem 0.5rem;
   }
   h1 {
     font-size: 1.5rem;

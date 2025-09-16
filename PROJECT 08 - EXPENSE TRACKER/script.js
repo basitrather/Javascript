@@ -10,6 +10,7 @@ const submitExpenseBtn = document.querySelector(".addExpenseBtn");
 const tableBody = document.querySelector("#expense-table-body");
 const totalAmount = document.querySelector("#total-amount");
 const tableHeading = document.querySelectorAll("th");
+const fullSection = document.querySelector(".webapp");
 const userInputs = {
   description: "",
   amount: "",
@@ -18,8 +19,6 @@ const userInputs = {
 let totalSum = 0;
 
 // FUNCTIONS
-//deleteItem function
-const deleteItem = function () {};
 // Create expense table on the DOM
 const createElements = function (object) {
   const tableRow = document.createElement("tr");
@@ -100,7 +99,7 @@ displayData();
 const toggleThemeAutomatically = function () {
   const tableData = document.querySelectorAll("td");
   if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-    document.body.classList.toggle("changeBackGroundImage");
+    fullSection.classList.toggle("changeBackGroundImage");
     title.classList.toggle("heading");
     label.forEach((element) => {
       element.classList.toggle("label");
