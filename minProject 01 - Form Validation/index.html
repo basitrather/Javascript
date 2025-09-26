@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>signUp</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <form action="">
+      <div>
+        <label for="text">UserName</label>
+        <input
+          id="USname"
+          type="text"
+          placeholder="ENTER USERNAME"
+          name="username"
+        />
+      </div>
+      <span id="nameError"
+        >Name should be greater than 2 characters & less than 15
+        characters</span
+      >
+      <div>
+        <label for="password">password</label>
+        <input
+          id="password"
+          type="password"
+          placeholder="ENTER PASSWORD"
+          name="password"
+        />
+      </div>
+      <div>
+        <label for="repass">re-enter </label>
+        <input
+          id="repass"
+          type="password"
+          placeholder="RE ENTER PASSWORD"
+          name="repass"
+        />
+      </div>
+      <span id="passwordError">Password should match!</span>
+      <span id="passwordError2">Password should contains #,*</span>
+      <div>
+        <label for="email">email</label>
+        <input
+          id="email"
+          type="email"
+          placeholder="ENTER EMAIL"
+          name="emailAddress"
+        />
+      </div>
+      <span id="emailError">email should contain @</span>
+      <span id="emailError2">email should not be empty</span>
+      <div>
+        <label for="gender">Select Gender</label>
+        <select name="gender" id="">
+          <option value="">male</option>
+          <option value="">female</option>
+        </select>
+      </div>
+      <input type="submit" name="" />
+    </form>
+    <script src="/minProject/script.js"></script>
+  </body>
+</html>
