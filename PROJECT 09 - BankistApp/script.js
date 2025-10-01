@@ -85,6 +85,28 @@ const calcAndDisplayBalance = function (movements) {
   let balance = movements.reduce((accum, ele) => accum + ele, 0);
   labelBalance.textContent = `${balance}€`;
 };
+const calcDisplaySummary = function (movements) {
+  // inside came money
+  const income = movements
+    .filter((ele) => ele > 0)
+    .reduce((acc, current) => acc + current, 0);
+  labelSumIn.textContent = ` ${income}€`;
+
+  //outside went money
+  const out = movements
+    .filter((ele) => ele < 0)
+    .reduce((acc, current) => acc + current, 0);
+  labelSumOut.textContent = `${Math.abs(out)}€`;
+
+  //the intrest bank will give user
+  const intrest = movements
+    .filter((ele) => ele > 0)
+    .map((deposit) => (deposit * 1.2) / 100)
+    .filter((int) => int >= 1)
+    .reduce((int, current) => int + current, 0);
+  labelSumInterest.textContent = `${intrest.toFixed(2)}€`;
+};
 setUserName(accounts);
 displayMovements(account1.movements);
 calcAndDisplayBalance(account1.movements);
+calcDisplaySummary(account1.movements);
