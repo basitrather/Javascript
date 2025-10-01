@@ -81,6 +81,10 @@ const setUserName = function (accs) {
         .join("") + "@bankist.com";
   });
 };
+const calcAndDisplayBalance = function (movements) {
+  let balance = movements.reduce((accum, ele) => accum + ele, 0);
+  labelBalance.textContent = `${balance}€`;
+};
 setUserName(accounts);
 displayMovements(account1.movements);
-console.log(accounts);
+calcAndDisplayBalance(account1.movements);
