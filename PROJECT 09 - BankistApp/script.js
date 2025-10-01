@@ -71,5 +71,16 @@ const displayMovements = function (movements) {
     containerMovements.insertAdjacentHTML("afterbegin", html);
   });
 };
+const setUserName = function (accs) {
+  accs.forEach((ele) => {
+    ele.userName =
+      ele.owner
+        .toLowerCase()
+        .split(" ")
+        .map((word) => word[0])
+        .join("") + "@bankist.com";
+  });
+};
+setUserName(accounts);
 displayMovements(account1.movements);
-console.log("ahjhdb");
+console.log(accounts);
