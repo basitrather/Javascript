@@ -54,7 +54,19 @@ const calcAverageHumanAge = function (dogAges) {
   });
   const totalAdultDogsAge = adultDogs.reduce((acc, ele) => acc + ele, 0);
   const averageAge = totalAdultDogsAge / adultDogs.length;
-  console.log(averageAge);
+  console.log(averageAge.toFixed(1));
 };
 calcAverageHumanAge([5, 2, 4, 1, 15, 8, 3]);
 calcAverageHumanAge([16, 6, 10, 5, 6, 1, 4]);
+
+// Rewrite the 'calcAverageHumanAge' function from the previous challenge, but this time as an arrow function, and using chaining!
+
+const calcAverageHumanAgeChain = function (dogAges) {
+  const humanAge = dogAges
+    .map((age) => (age <= 2 ? 2 * age : 16 + age * 4))
+    .filter((age) => age >= 18)
+    .reduce((acc, ele, _, arr) => acc + ele / arr.length, 0);
+  console.log(humanAge.toFixed(1));
+};
+calcAverageHumanAgeChain([5, 2, 4, 1, 15, 8, 3]);
+calcAverageHumanAgeChain([16, 6, 10, 5, 6, 1, 4]);
