@@ -73,40 +73,69 @@ const displayMovements = function (movements) {
 };
 const setUserName = function (accs) {
   accs.forEach((ele) => {
-    ele.userName =
-      ele.owner
-        .toLowerCase()
-        .split(" ")
-        .map((word) => word[0])
-        .join("") + "@bankist.com";
+    ele.userName = ele.owner
+      .toLowerCase()
+      .split(" ")
+      .map((word) => word[0])
+      .join("");
   });
 };
 const calcAndDisplayBalance = function (movements) {
   let balance = movements.reduce((accum, ele) => accum + ele, 0);
   labelBalance.textContent = `${balance}€`;
 };
-const calcDisplaySummary = function (movements) {
+const calcDisplaySummary = function (account) {
   // inside came money
-  const income = movements
+  const income = account.movements
     .filter((ele) => ele > 0)
     .reduce((acc, current) => acc + current, 0);
   labelSumIn.textContent = ` ${income}€`;
 
   //outside went money
-  const out = movements
+  const out = account.movements
     .filter((ele) => ele < 0)
     .reduce((acc, current) => acc + current, 0);
   labelSumOut.textContent = `${Math.abs(out)}€`;
 
   //the intrest bank will give user
-  const intrest = movements
+  const intrest = account.movements
     .filter((ele) => ele > 0)
-    .map((deposit) => (deposit * 1.2) / 100)
+    .map((deposit) => (deposit * account.interestRate) / 100)
     .filter((int) => int >= 1)
     .reduce((int, current) => int + current, 0);
   labelSumInterest.textContent = `${intrest.toFixed(2)}€`;
 };
 setUserName(accounts);
-displayMovements(account1.movements);
-calcAndDisplayBalance(account1.movements);
-calcDisplaySummary(account1.movements);
+
+let currentAccount;
+btnLogin.addEventListener("click", function (e) {
+  e.preventDefault();
+  currentAccount = accounts.find(
+    (acc) => acc.userName === inputLoginUsername.value
+  );
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    //display UI and greeting messeage
+    labelWelcome.textContent = `Welcome Back, ${
+      currentAccount.owner.split(" ")[0]
+    }`;
+    containerApp.classList.add("loggedIn");
+
+    //display balance
+    calcAndDisplayBalance(currentAccount.movements);
+
+    //display summary
+    calcDisplaySummary(currentAccount);
+
+    //display movements
+    displayMovements(currentAccount.movements);
+
+    //clear Input fields loose focus
+    inputLoginPin.value = inputLoginUsername.value = "";
+    inputLoginPin.blur();
+  } else {
+    //error messeage
+    containerApp.classList.remove("loggedIn");
+    labelWelcome.classList.toggle("wrongUIDandPIN");
+    labelWelcome.textContent = `Enter the right userName and pin`;
+  }
+});
