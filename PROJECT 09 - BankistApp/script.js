@@ -115,38 +115,7 @@ const displayUI = function (acc) {
   //display movements
   displayMovements(acc.movements);
 };
-const pause = function () {
-  clearInterval(interval);
-};
-setUserName(accounts);
-let currentAccount;
-
-//eventlisteners
-
-btnLogin.addEventListener("click", function (e) {
-  e.preventDefault();
-  currentAccount = accounts.find(
-    (acc) => acc.userName === inputLoginUsername.value
-  );
-  if (currentAccount?.pin === Number(inputLoginPin.value)) {
-    //display UI and greeting messeage
-    labelWelcome.textContent = `Welcome Back, ${
-      currentAccount.owner.split(" ")[0]
-    }`;
-    containerApp.classList.add("loggedIn");
-
-    //display UI
-    displayUI(currentAccount);
-
-    //clear Input fields loose focus
-    inputLoginPin.value = inputLoginUsername.value = "";
-    inputLoginPin.blur();
-  } else {
-    //error messeage
-    containerApp.classList.remove("loggedIn");
-    labelWelcome.classList.toggle("wrongUIDandPIN");
-    labelWelcome.textContent = `Enter the right userName and pin`;
-  }
+const timerFn = function () {
   let second = 60;
   let minute = 4;
   let interval = setInterval(() => {
@@ -170,7 +139,41 @@ btnLogin.addEventListener("click", function (e) {
       clearInterval(interval);
       containerApp.classList.remove("loggedIn");
     }
+    btnLogin.addEventListener("click", function () {
+      clearInterval(interval);
+    });
   }, 1000);
+};
+setUserName(accounts);
+let currentAccount;
+
+//eventlisteners
+
+btnLogin.addEventListener("click", function (e) {
+  e.preventDefault();
+  currentAccount = accounts.find(
+    (acc) => acc.userName === inputLoginUsername.value
+  );
+  if (currentAccount?.pin === Number(inputLoginPin.value)) {
+    //greeting messeage
+    labelWelcome.textContent = `Welcome Back, ${
+      currentAccount.owner.split(" ")[0]
+    }`;
+    containerApp.classList.add("loggedIn");
+
+    //display UI
+    displayUI(currentAccount);
+
+    //clear Input fields loose focus
+    inputLoginPin.value = inputLoginUsername.value = "";
+    inputLoginPin.blur();
+  } else {
+    //error messeage
+    containerApp.classList.remove("loggedIn");
+    labelWelcome.classList.toggle("wrongUIDandPIN");
+    labelWelcome.textContent = `Enter the right userName and pin`;
+  }
+  timerFn();
 });
 btnTransfer.addEventListener("click", function (e) {
   e.preventDefault();
