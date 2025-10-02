@@ -115,6 +115,9 @@ const displayUI = function (acc) {
   //display movements
   displayMovements(acc.movements);
 };
+const pause = function () {
+  clearInterval(interval);
+};
 setUserName(accounts);
 let currentAccount;
 
@@ -144,6 +147,30 @@ btnLogin.addEventListener("click", function (e) {
     labelWelcome.classList.toggle("wrongUIDandPIN");
     labelWelcome.textContent = `Enter the right userName and pin`;
   }
+  let second = 60;
+  let minute = 4;
+  let interval = setInterval(() => {
+    second--;
+    console.log(second);
+
+    if (second <= 60) {
+      if (second >= 10) {
+        labelTimer.textContent = `0${minute}:${second}`;
+      }
+      if (second < 10) {
+        labelTimer.textContent = `0${minute}:0${second}`;
+      }
+    }
+    if (second < 0) {
+      second = 59;
+      minute--;
+      labelTimer.textContent = `0${minute}:${second}`;
+    }
+    if (second === 0 && minute === 0) {
+      clearInterval(interval);
+      containerApp.classList.remove("loggedIn");
+    }
+  }, 1000);
 });
 btnTransfer.addEventListener("click", function (e) {
   e.preventDefault();
