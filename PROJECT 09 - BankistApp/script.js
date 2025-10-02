@@ -120,8 +120,6 @@ const timerFn = function () {
   let minute = 4;
   let interval = setInterval(() => {
     second--;
-    console.log(second);
-
     if (second <= 60) {
       if (second >= 10) {
         labelTimer.textContent = `0${minute}:${second}`;
@@ -143,6 +141,10 @@ const timerFn = function () {
       clearInterval(interval);
     });
   }, 1000);
+};
+const logOut = function () {
+  containerApp.classList.remove("loggedIn");
+  labelWelcome.textContent = `Enter the right userName and pin`;
 };
 setUserName(accounts);
 let currentAccount;
@@ -167,13 +169,12 @@ btnLogin.addEventListener("click", function (e) {
     //clear Input fields loose focus
     inputLoginPin.value = inputLoginUsername.value = "";
     inputLoginPin.blur();
+    timerFn();
   } else {
     //error messeage
-    containerApp.classList.remove("loggedIn");
+    logOut();
     labelWelcome.classList.toggle("wrongUIDandPIN");
-    labelWelcome.textContent = `Enter the right userName and pin`;
   }
-  timerFn();
 });
 btnTransfer.addEventListener("click", function (e) {
   e.preventDefault();
@@ -196,4 +197,27 @@ btnTransfer.addEventListener("click", function (e) {
   }
   inputTransferTo.value = inputTransferAmount.value = "";
   inputTransferAmount.blur();
+});
+btnClose.addEventListener("click", function (e) {
+  e.preventDefault();
+  console.log("ads");
+  if (
+    currentAccount.userName == inputCloseUsername.value &&
+    currentAccount.pin == inputClosePin.value
+  ) {
+    //find the index of the current account
+    const index = accounts.findIndex(
+      (acc) => acc.userName === currentAccount.userName
+    );
+    // Delete the user
+    accounts.splice(index, 1);
+
+    //logout the user from account
+    logOut();
+
+    //Blank the input Fields
+    inputCloseUsername.value = inputClosePin.value = "";
+  } else {
+    alert("Enter the right userName and Pin");
+  }
 });
