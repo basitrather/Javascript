@@ -80,9 +80,9 @@ const setUserName = function (accs) {
       .join("");
   });
 };
-const calcAndDisplayBalance = function (movements) {
-  let balance = movements.reduce((accum, ele) => accum + ele, 0);
-  labelBalance.textContent = `${balance}€`;
+const calcAndDisplayBalance = function (acc) {
+  acc.balance = acc.movements.reduce((accum, ele) => accum + ele, 0);
+  labelBalance.textContent = `${acc.balance}€`;
 };
 const calcDisplaySummary = function (account) {
   // inside came money
@@ -105,9 +105,21 @@ const calcDisplaySummary = function (account) {
     .reduce((int, current) => int + current, 0);
   labelSumInterest.textContent = `${intrest.toFixed(2)}€`;
 };
-setUserName(accounts);
+const displayUI = function (acc) {
+  //display balance
+  calcAndDisplayBalance(acc);
 
+  //display summary
+  calcDisplaySummary(acc);
+
+  //display movements
+  displayMovements(acc.movements);
+};
+setUserName(accounts);
 let currentAccount;
+
+//eventlisteners
+
 btnLogin.addEventListener("click", function (e) {
   e.preventDefault();
   currentAccount = accounts.find(
@@ -120,14 +132,8 @@ btnLogin.addEventListener("click", function (e) {
     }`;
     containerApp.classList.add("loggedIn");
 
-    //display balance
-    calcAndDisplayBalance(currentAccount.movements);
-
-    //display summary
-    calcDisplaySummary(currentAccount);
-
-    //display movements
-    displayMovements(currentAccount.movements);
+    //display UI
+    displayUI(currentAccount);
 
     //clear Input fields loose focus
     inputLoginPin.value = inputLoginUsername.value = "";
@@ -138,4 +144,26 @@ btnLogin.addEventListener("click", function (e) {
     labelWelcome.classList.toggle("wrongUIDandPIN");
     labelWelcome.textContent = `Enter the right userName and pin`;
   }
+});
+btnTransfer.addEventListener("click", function (e) {
+  e.preventDefault();
+  const receiverAcc = accounts.find(
+    (acc) => acc.userName === inputTransferTo.value
+  );
+  const amount = Number(inputTransferAmount.value);
+  if (
+    amount > 0 &&
+    receiverAcc &&
+    currentAccount.balance >= amount &&
+    receiverAcc?.userName !== currentAccount.userName
+  ) {
+    //remove and add movements of the transferer and reciver movements
+    currentAccount.movements.push(-amount);
+    receiverAcc.movements.push(amount);
+
+    //displayUI
+    displayUI(currentAccount);
+  }
+  inputTransferTo.value = inputTransferAmount.value = "";
+  inputTransferAmount.blur();
 });
