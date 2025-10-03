@@ -155,12 +155,23 @@ const loanRequest = function (amount) {
     displayUI(currentAccount);
   }
 };
-
+const sortMovements = function (currentAccount, state) {
+  if (state) {
+    const tempMov = currentAccount.movements.slice().sort((a, b) => a - b);
+    displayMovements(tempMov);
+  } else {
+    displayMovements(currentAccount.movements);
+  }
+};
 setUserName(accounts);
 let currentAccount;
+let sortState = false;
 
 //eventlisteners
-
+btnSort.addEventListener("click", function () {
+  sortMovements(currentAccount, !sortState);
+  sortState = !sortState;
+});
 btnLoan.addEventListener("click", function (e) {
   e.preventDefault();
   const loanAmount = Number(inputLoanAmount.value);
@@ -175,6 +186,7 @@ btnLogin.addEventListener("click", function (e) {
   );
   if (currentAccount?.pin === Number(inputLoginPin.value)) {
     //greeting messeage
+    // labelWelcome.style.color = "black";
     labelWelcome.textContent = `Welcome Back, ${
       currentAccount.owner.split(" ")[0]
     }`;
@@ -230,7 +242,8 @@ btnClose.addEventListener("click", function (e) {
     accounts.splice(index, 1);
 
     //logout the user from account
-    logOut();
+    containerApp.classList.remove("loggedIn");
+    labelWelcome.textContent = `Log in to get started`;
 
     //Blank the input Fields
     inputCloseUsername.value = inputClosePin.value = "";

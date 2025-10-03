@@ -294,7 +294,6 @@ h2 {
   transition: all 1s;
 }
 .wrongUIDandPIN {
-  color: red;
   animation-duration: 0.3s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
