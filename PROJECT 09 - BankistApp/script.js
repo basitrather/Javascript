@@ -146,11 +146,28 @@ const logOut = function () {
   containerApp.classList.remove("loggedIn");
   labelWelcome.textContent = `Enter the right userName and pin`;
 };
+const loanRequest = function (amount) {
+  const depositCheck = currentAccount.movements.some(
+    (move) => move >= 0.1 * amount
+  );
+  if (depositCheck) {
+    currentAccount.movements.push(amount);
+    displayUI(currentAccount);
+  }
+};
+
 setUserName(accounts);
 let currentAccount;
 
 //eventlisteners
 
+btnLoan.addEventListener("click", function (e) {
+  e.preventDefault();
+  const loanAmount = Number(inputLoanAmount.value);
+  loanRequest(loanAmount);
+  inputLoanAmount.value = "";
+  inputLoanAmount.blur();
+});
 btnLogin.addEventListener("click", function (e) {
   e.preventDefault();
   currentAccount = accounts.find(
