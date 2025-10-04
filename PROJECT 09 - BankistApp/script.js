@@ -96,19 +96,41 @@ const inputTransferAmount = document.querySelector(".form__input--amount");
 const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
+//Date And Time
+const date = new Date();
+let day = `${date.getDate()}`.padStart(2, 0);
+let month = `${date.getMonth() + 1}`.padStart(2, 0);
+let year = date.getFullYear();
+let hours = date.getHours();
+let minutes = date.getMinutes();
+let formattedDateTime = `${day}/${month}/${year} ${hours}:${minutes}`;
+let formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
 
 // Here we will write a function to display data of the movements.
-const displayMovements = function (movements) {
+const displayMovements = function (acc, sort) {
   containerMovements.innerHTML = "";
-  movements.forEach((mov, index) => {
-    const type = mov > 0 ? "deposit" : "withdrawal";
+  const combinedMovementsDates = acc.movements.map((mov, i) => ({
+    movements: mov,
+    movementDates: acc.movementsDates[i],
+  }));
+  if (sort) combinedMovementsDates.sort((a, b) => a.movements - b.movements);
+  combinedMovementsDates.forEach((obj, index) => {
+    const { movements, movementDates } = obj;
+    //setting Date in movements
+    const newDate = new Date(movementDates);
+    const day = `${newDate.getDate()}`.padStart(2, 0);
+    const month = `${newDate.getMonth() + 1}`.padStart(2, 0);
+    const year = newDate.getFullYear();
+    const currentDate = `${day}/${month}/${year}`;
+
+    const type = movements > 0 ? "deposit" : "withdrawal"; //type of transaction
     const html = `<div class="movements__row">
         <div class="movements__type movements__type--${type}">${
       index + 1
     } ${type}</div>
-        <div class="movements__value">${mov}€</div>
+          <div class="movements__date">${currentDate}</div>
+        <div class="movements__value">${movements}€</div>
       </div>`;
-
     containerMovements.insertAdjacentHTML("afterbegin", html);
   });
 };
@@ -130,13 +152,13 @@ const calcDisplaySummary = function (account) {
   const income = account.movements
     .filter((ele) => ele > 0)
     .reduce((acc, current) => acc + current, 0);
-  labelSumIn.textContent = ` ${income}€`;
+  labelSumIn.textContent = ` ${Math.floor(income)}€`;
 
   //outside went money
   const out = account.movements
     .filter((ele) => ele < 0)
     .reduce((acc, current) => acc + current, 0);
-  labelSumOut.textContent = `${Math.abs(out)}€`;
+  labelSumOut.textContent = `${Math.floor(out)}€`;
 
   //the intrest bank will give user
   const intrest = account.movements
@@ -154,7 +176,7 @@ const displayUI = function (acc) {
   calcDisplaySummary(acc);
 
   //display movements
-  displayMovements(acc.movements);
+  displayMovements(acc);
 };
 const timerFn = function () {
   let second = 60;
@@ -193,20 +215,23 @@ const loanRequest = function (amount) {
   );
   if (depositCheck) {
     currentAccount.movements.push(Math.floor(amount));
+    currentAccount.movementsDates.push(new Date());
     displayUI(currentAccount);
   }
 };
 const sortMovements = function (currentAccount, state) {
-  if (state) {
-    const tempMov = currentAccount.movements.slice().sort((a, b) => a - b);
-    displayMovements(tempMov);
-  } else {
-    displayMovements(currentAccount.movements);
-  }
+  displayMovements(currentAccount, state);
 };
-setUserName(accounts);
-let currentAccount;
-let sortState = false;
+
+setUserName(accounts); //setting usernames globally
+let currentAccount; //current login account
+let sortState = false; //current state of sort
+labelDate.textContent = formattedDateTime; //Display Current Date and Time
+
+// FakeLOGIN
+currentAccount = account1;
+displayUI(currentAccount);
+containerApp.classList.add("loggedIn");
 
 //eventlisteners
 btnSort.addEventListener("click", function () {
@@ -261,7 +286,9 @@ btnTransfer.addEventListener("click", function (e) {
     //remove and add movements of the transferer and reciver movements
     currentAccount.movements.push(-amount);
     receiverAcc.movements.push(amount);
-
+    //push time
+    currentAccount.movementsDates.push(new Date());
+    receiverAcc.movementsDates.push(new Date());
     //displayUI
     displayUI(currentAccount);
   }
