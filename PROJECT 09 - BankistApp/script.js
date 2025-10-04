@@ -228,10 +228,10 @@ let currentAccount; //current login account
 let sortState = false; //current state of sort
 labelDate.textContent = formattedDateTime; //Display Current Date and Time
 
-// FakeLOGIN
-currentAccount = account1;
-displayUI(currentAccount);
-containerApp.classList.add("loggedIn");
+// // FakeLOGIN
+// currentAccount = account1;
+// displayUI(currentAccount);
+// containerApp.classList.add("loggedIn");
 
 //eventlisteners
 btnSort.addEventListener("click", function () {
