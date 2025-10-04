@@ -192,7 +192,7 @@ const loanRequest = function (amount) {
     (move) => move >= 0.1 * amount
   );
   if (depositCheck) {
-    currentAccount.movements.push(amount);
+    currentAccount.movements.push(Math.floor(amount));
     displayUI(currentAccount);
   }
 };
@@ -251,7 +251,7 @@ btnTransfer.addEventListener("click", function (e) {
   const receiverAcc = accounts.find(
     (acc) => acc.userName === inputTransferTo.value
   );
-  const amount = Number(inputTransferAmount.value);
+  const amount = Math.floor(inputTransferAmount.value);
   if (
     amount > 0 &&
     receiverAcc &&
