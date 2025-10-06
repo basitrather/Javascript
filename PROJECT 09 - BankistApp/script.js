@@ -134,9 +134,7 @@ let formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
 function applyTheme() {
   if (prefersDark.matches) {
     document.body.classList.add("dark");
-    document.body.classList.remove("light");
   } else {
-    document.body.classList.add("light");
     document.body.classList.remove("dark");
   }
 }
