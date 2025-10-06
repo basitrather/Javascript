@@ -30,7 +30,7 @@
 
 // const accounts = [account1, account2, account3, account4];
 const account1 = {
-  owner: "Jonas Schmedtmann",
+  owner: "basit rather",
   movements: [200, 455.23, -306.5, 25000, -642.21, -133.9, 79.97, 1300],
   interestRate: 1.2, // %
   pin: 1111,
@@ -50,7 +50,7 @@ const account1 = {
 };
 
 const account2 = {
-  owner: "Jessica Davis",
+  owner: "arslan rather",
   movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
   interestRate: 1.5,
   pin: 2222,
@@ -68,10 +68,31 @@ const account2 = {
   currency: "USD",
   locale: "en-US",
 };
+const account3 = {
+  owner: "haseeb dar",
+  movements: [300, -1900, 1090, 2100, -100, -800, 3000],
+  interestRate: 1.5,
+  pin: 3333,
 
-const accounts = [account1, account2];
+  movementsDates: [
+    "2019-11-01T13:15:33.035Z",
+    "2019-08-10T09:48:16.867Z",
+    "2019-09-15T06:04:23.907Z",
+    "2020-01-16T14:18:46.235Z",
+    "2020-02-05T16:33:06.386Z",
+    "2020-04-10T14:43:26.374Z",
+    "2020-06-15T18:49:59.371Z",
+    "2020-07-16T12:01:20.894Z",
+  ],
+  currency: "USD",
+  locale: "en-US",
+};
+
+const accounts = [account1, account2, account3];
 
 // Elements
+const nav = document.querySelector(".ele");
+const login = document.querySelector(".login");
 const labelWelcome = document.querySelector(".welcome");
 const labelDate = document.querySelector(".date");
 const labelBalance = document.querySelector(".balance__value");
@@ -82,6 +103,7 @@ const labelTimer = document.querySelector(".timer");
 
 const containerApp = document.querySelector(".app");
 const containerMovements = document.querySelector(".movements");
+const movementsValue = document.querySelectorAll(".movements__value");
 
 const btnLogin = document.querySelector(".login__btn");
 const btnTransfer = document.querySelector(".form__btn--transfer");
@@ -97,6 +119,7 @@ const inputTransferAmount = document.querySelector(".form__input--amount");
 const inputLoanAmount = document.querySelector(".form__input--loan-amount");
 const inputCloseUsername = document.querySelector(".form__input--user");
 const inputClosePin = document.querySelector(".form__input--pin");
+const prefersDark = window.matchMedia("(prefers-color-scheme: dark)");
 //Date And Time
 const date = new Date();
 let day = `${date.getDate()}`.padStart(2, 0);
@@ -108,6 +131,27 @@ let formattedDateTime = `${day}/${month}/${year} ${hours}:${minutes}`;
 let formattedDate = `${day}/${month}/${year} ${hours}:${minutes}`;
 
 // Here we will write a function to display data of the movements.
+function applyTheme() {
+  if (prefersDark.matches) {
+    document.body.classList.add("dark");
+    document.body.classList.remove("light");
+  } else {
+    document.body.classList.add("light");
+    document.body.classList.remove("dark");
+  }
+}
+
+function handleResize() {
+  if (window.innerWidth <= 540) {
+    nav.classList.add("hidden-nav");
+    login.classList.add("hidden-login");
+    document.body.style.overflow = "hidden";
+  } else {
+    nav.classList.remove("hidden-nav");
+    document.body.style.overflow = "auto";
+    login.classList.remove("hidden-login");
+  }
+}
 const displayMovements = function (acc, sort) {
   containerMovements.innerHTML = "";
   const combinedMovementsDates = acc.movements.map((mov, i) => ({
@@ -257,6 +301,11 @@ btnLogin.addEventListener("click", function (e) {
     }`;
     containerApp.classList.add("loggedIn");
 
+    //remove  queries
+    document.querySelector(".logo").classList.add("dsp-hidden");
+    nav.classList.remove("hidden-nav");
+    login.classList.remove("hidden-login");
+    document.body.style.overflow = "auto";
     //display UI
     displayUI(currentAccount);
 
@@ -267,6 +316,7 @@ btnLogin.addEventListener("click", function (e) {
   } else {
     //error messeage
     logOut();
+    handleResize();
     labelWelcome.classList.toggle("wrongUIDandPIN");
   }
 });
@@ -327,8 +377,11 @@ inputLoginUsername.addEventListener("keydown", function (event) {
     if (nextField) nextField.focus();
   }
 });
+prefersDark.addEventListener("change", applyTheme());
+window.addEventListener("resize", handleResize);
 
-// // FakeLOGIN
+handleResize();
+// FakeLOGIN
 // currentAccount = account1;
 // displayUI(currentAccount);
 // containerApp.classList.add("loggedIn");

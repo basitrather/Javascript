@@ -49,6 +49,7 @@ nav {
   color: inherit;
   border: 1px solid #fff;
   transition: all 0.3s;
+  color: #000000;
 }
 
 .login__input:focus {
@@ -57,7 +58,7 @@ nav {
 }
 
 .login__input::placeholder {
-  color: #bbb;
+  color: #000000;
 }
 
 .login__btn {
@@ -81,7 +82,7 @@ nav {
 .app {
   position: relative;
   max-width: 100rem;
-  margin: 4rem auto;
+  margin: 1rem auto;
   display: grid;
   grid-template-columns: 4fr 3fr;
   grid-template-rows: auto repeat(3, 15rem) auto;
@@ -159,6 +160,7 @@ nav {
 .movements__value {
   font-size: 1.7rem;
   margin-left: auto;
+  color: #000000;
 }
 
 /* SUMMARY */
@@ -169,7 +171,11 @@ nav {
   padding: 0 0.3rem;
   margin-top: 1rem;
 }
-
+.inside-summary {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .summary__label {
   font-size: 1.2rem;
   font-weight: 500;
@@ -285,7 +291,22 @@ h2 {
   text-align: right;
   font-size: 1.25rem;
 }
-
+/* Hidden Classes */
+.hidden-nav {
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  padding: 0 0;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  overflow: hidden;
+  margin: auto;
+}
+.hidden-login {
+  flex-direction: column;
+  gap: 1.4rem;
+}
 .timer {
   font-weight: 600;
 }
@@ -299,7 +320,22 @@ h2 {
   animation-fill-mode: forwards;
   animation-name: jittery;
 }
+/* Light Mode */
+.light {
+  background-color: #ffffff;
+  color: #111111;
+}
 
+/* Dark Mode */
+.dark {
+  background-color: #14181fd3;
+  color: #e6edf3;
+}
+.dsp-hidden {
+  display: none;
+}
+
+/* Animations */
 @keyframes jittery {
   10% {
     transform: translate(-2px, -3px) scale(1.01, 1.01);
@@ -330,5 +366,63 @@ h2 {
   }
   100% {
     transform: translate(3px, 1px) scale(0.95, 0.95);
+  }
+}
+
+/* Media-Queries */
+@media (max-width: 777px) {
+  .app {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .operation {
+    width: 60vw;
+    align-self: center;
+  }
+  .logout-timer {
+    align-self: center;
+  }
+  .summary {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    min-height: 15vh;
+  }
+
+  .btn--sort {
+    margin-left: 0;
+    border: none;
+    background: none;
+    font-size: 1.3rem;
+    font-weight: 500;
+    cursor: pointer;
+  }
+}
+@media (max-width: 444px) {
+  .summary {
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .btn--sort {
+    padding-right: 20px;
+  }
+  .balance__value {
+    font-size: 2.5rem;
+  }
+  .balance__label {
+    font-size: 1.7rem;
+  }
+  nav {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .movements__type {
+    margin-right: 0rem;
+    text-align: center;
   }
 }
