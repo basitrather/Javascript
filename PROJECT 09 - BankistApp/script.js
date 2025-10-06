@@ -89,6 +89,7 @@ const btnLoan = document.querySelector(".form__btn--loan");
 const btnClose = document.querySelector(".form__btn--close");
 const btnSort = document.querySelector(".btn--sort");
 
+const loginInputs = document.querySelectorAll("login__input");
 const inputLoginUsername = document.querySelector(".login__input--user");
 const inputLoginPin = document.querySelector(".login__input--pin");
 const inputTransferTo = document.querySelector(".form__input--to");
@@ -216,7 +217,10 @@ const loanRequest = function (amount) {
   if (depositCheck) {
     currentAccount.movements.push(Math.floor(amount));
     currentAccount.movementsDates.push(new Date());
-    displayUI(currentAccount);
+
+    setTimeout(() => {
+      displayUI(currentAccount);
+    }, 2000);
   }
 };
 const sortMovements = function (currentAccount, state) {
@@ -227,11 +231,6 @@ setUserName(accounts); //setting usernames globally
 let currentAccount; //current login account
 let sortState = false; //current state of sort
 labelDate.textContent = formattedDateTime; //Display Current Date and Time
-
-// // FakeLOGIN
-// currentAccount = account1;
-// displayUI(currentAccount);
-// containerApp.classList.add("loggedIn");
 
 //eventlisteners
 btnSort.addEventListener("click", function () {
@@ -319,3 +318,17 @@ btnClose.addEventListener("click", function (e) {
     alert("Enter the right userName and Pin");
   }
 });
+inputLoginUsername.addEventListener("keydown", function (event) {
+  //Enter functionality on username field
+  if (event.key === "Enter") {
+    event.preventDefault();
+    console.log("saghv");
+    const nextField = inputLoginPin;
+    if (nextField) nextField.focus();
+  }
+});
+
+// // FakeLOGIN
+// currentAccount = account1;
+// displayUI(currentAccount);
+// containerApp.classList.add("loggedIn");
