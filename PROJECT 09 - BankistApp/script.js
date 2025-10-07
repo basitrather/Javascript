@@ -139,17 +139,6 @@ function applyTheme() {
   }
 }
 
-function handleResize() {
-  if (window.innerWidth <= 540) {
-    nav.classList.add("hidden-nav");
-    login.classList.add("hidden-login");
-    document.body.style.overflow = "hidden";
-  } else {
-    nav.classList.remove("hidden-nav");
-    document.body.style.overflow = "auto";
-    login.classList.remove("hidden-login");
-  }
-}
 const displayMovements = function (acc, sort) {
   containerMovements.innerHTML = "";
   const combinedMovementsDates = acc.movements.map((mov, i) => ({
@@ -375,11 +364,25 @@ inputLoginUsername.addEventListener("keydown", function (event) {
     if (nextField) nextField.focus();
   }
 });
-prefersDark.addEventListener("change", applyTheme());
-window.addEventListener("resize", handleResize);
 
-handleResize();
+// IIFE function
+(function () {
+  if (window.innerWidth <= 540) {
+    nav.classList.add("hidden-nav");
+    login.classList.add("hidden-login");
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
+  } else {
+    nav.classList.remove("hidden-nav");
+    login.classList.remove("hidden-login");
+    document.documentElement.style.overflow = "";
+    document.body.style.overflow = "";
+  }
+})();
+prefersDark.addEventListener("change", applyTheme());
+
 // FakeLOGIN
 // currentAccount = account1;
 // displayUI(currentAccount);
 // containerApp.classList.add("loggedIn");
+// window.addEventListener("resize", handleResize);
