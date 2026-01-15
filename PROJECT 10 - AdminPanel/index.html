@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="login-container">
+      <h1>LOGIN</h1>
+
+      <div class="input-group">
+        <label for="email">EMAIL</label>
+        <input type="email" id="email" placeholder="your@email.com" />
+      </div>
+
+      <div class="input-group">
+        <label for="password">PASSWORD</label>
+        <input type="password" id="password" placeholder="••••••••" />
+      </div>
+
+      <button type="submit" id="input-submit">SIGN IN</button>
+
+      <div class="footer">Don't have an account? <a href="#">Sign up</a></div>
+    </div>
+
+    <div class="container">
+      <aside class="sidebar">
+        <h2 class="logo">Admin Panel</h2>
+        <ul>
+          <li class="active">Dashboard</li>
+        </ul>
+      </aside>
+
+      <main class="main">
+        <div class="cards">
+          <div class="card">
+            <h3 class="total-users">0</h3>
+            <p>Total Users</p>
+          </div>
+          <div class="card">
+            <h3 class="total-assignments">0</h3>
+            <p>Assigned Assignments</p>
+          </div>
+        </div>
+
+        <section class="table-section">
+          <h2>User Data</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>UserName</th>
+                <th>Age</th>
+              </tr>
+            </thead>
+            <tbody class="userTableBody"></tbody>
+          </table>
+        </section>
+        <section class="table-section">
+          <h2>Assignments</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody class="AssignmentTableBody"></tbody>
+          </table>
+        </section>
+        <button class="addTaskBtn">Add Task</button>
+      </main>
+    </div>
+    <div class="userPanel">
+      <aside class="sidebar">
+        <h2 class="logo">UserPanel</h2>
+        <ul>
+          <li class="active">Assignments</li>
+        </ul>
+      </aside>
+      <main class="main">
+        <section class="table-section">
+          <h2>Recent Articles</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>TaskName</th>
+                <th>TaskDescription</th>
+              </tr>
+            </thead>
+            <tbody class="userTaskBody"></tbody>
+          </table>
+        </section>
+      </main>
+    </div>
+
+    <div class="AssignmentForm">
+      <h2>Task</h2>
+      <form>
+        <div class="user-box">
+          <input id="user-box-name" type="text" name="" required="" />
+          <label>Name</label>
+        </div>
+        <div class="user-box">
+          <input id="user-box-description" type="text" name="" required="" />
+          <label>Description</label>
+          <button class="formSubmitBtn" type="submit">Submit</button>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
