@@ -16,7 +16,7 @@ const loadUserdata = function () {
 };
 
 const loadAssigmentCount = function () {
-  totalAssignments.textContent = assignmemts.length + 1;
+  totalAssignments.textContent = assignmemts.length;
 };
 const assignmentHistory = () => {
   let revivedAssignments = JSON.parse(localStorage.getItem("assignment"));
@@ -88,7 +88,7 @@ inputSubmit.addEventListener("click", function () {
         profiles[curPro].auth = true;
         loginContainer.classList.add("displaynone");
         adminDashboard.classList.add("displayFlex");
-        totalUsers.textContent = profiles.length - 1;
+        totalUsers.textContent = profiles.length;
         loadUserdata();
         loadAssignments();
         assignmentHistory();
