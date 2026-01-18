@@ -141,3 +141,96 @@ const imageObserver = new IntersectionObserver(loadImageFn, {
 lazyImages.forEach(ele => {
   imageObserver.observe(ele);
 });
+
+// Slider component
+const sliderContainer = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slide');
+const sliderRightBtn = document.querySelector('.slider__btn--right');
+const sliderLeftBtn = document.querySelector('.slider__btn--left');
+const dotContainer = document.querySelector('.dots');
+let currentSlide = 0;
+let totalSlide = slides.length;
+
+//Styling components
+slides.forEach((slide, slideINX) => {
+  slide.style.transform = `translateX(${slideINX * 100}%)`;
+});
+
+//Function for sliding the components
+const sliderfn = function () {
+  slides.forEach((slide, sliderInx) => {
+    slide.style.transform = `translateX(${100 * (sliderInx - currentSlide)}%)`;
+  });
+};
+
+//Show active dot
+const activeDot = function (slide) {
+  // Remove the current slide
+  document
+    .querySelectorAll('.dots__dot')
+    .forEach(dot => dot.classList.remove('dots__dot--active'));
+
+  //Add bgc
+  const temp = document.querySelector(`.dots__dot[data-slide="${slide}"]`);
+  temp.classList.add('dots__dot--active');
+};
+//Show dots on DOM
+const createDots = function () {
+  slides.forEach((_, ind) => {
+    dotContainer.insertAdjacentHTML(
+      'beforeend',
+      `<button class="dots__dot" data-slide="${ind}"></button>`,
+    );
+  });
+};
+//Right slider Btn functionality
+sliderRightBtn.addEventListener('click', function () {
+  if (currentSlide === totalSlide - 1) {
+    currentSlide = 0;
+  } else {
+    currentSlide++;
+  }
+  sliderfn(currentSlide);
+  activeDot(currentSlide);
+});
+
+//left slider Btn functionality
+sliderLeftBtn.addEventListener('click', function () {
+  if (currentSlide === 0) {
+    currentSlide = totalSlide - 1;
+  } else {
+    currentSlide--;
+  }
+  sliderfn(currentSlide);
+  activeDot(currentSlide);
+});
+
+//Keydown press for right and left arrow
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'ArrowLeft') {
+    if (currentSlide === 0) {
+      currentSlide = totalSlide - 1;
+    } else {
+      currentSlide--;
+    }
+    sliderfn(currentSlide);
+    activeDot(currentSlide);
+  }
+  if (e.key === 'ArrowRight') {
+    if (currentSlide === totalSlide - 1) {
+      currentSlide = 0;
+    } else {
+      currentSlide++;
+    }
+    activeDot(currentSlide);
+  }
+});
+dotContainer.addEventListener('click', function (e) {
+  if (e.target.classList.contains('dots__dot')) {
+    currentSlide = e.target.dataset.slide;
+    sliderfn(currentSlide);
+    activeDot(currentSlide);
+  }
+});
+createDots();
+activeDot(currentSlide);
