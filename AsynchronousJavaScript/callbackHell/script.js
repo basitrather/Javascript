@@ -44,7 +44,7 @@ const requestAPI = function (countryName) {
 const getCountryData = function (countryName) {
   // First API request
   const apiReceived = requestAPI(countryName);
-
+  console.log(apiReceived);
   apiReceived.addEventListener("load", function () {
     // Response arrives here
     const [data] = JSON.parse(this.responseText);
