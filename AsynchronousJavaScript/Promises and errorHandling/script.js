@@ -44,3 +44,53 @@ const getCountryData = function (countryName) {
 document.querySelector(".child").addEventListener("click", function () {
   getCountryData("usa");
 });
+
+// Creating a Promise
+const lotteryPromise = new Promise(function (resolve, reject) {
+  // Executor runs immediately when Promise is created
+  console.log("Lottery draw started");
+
+  // Simulate async work (e.g. API, timer, task)
+  setTimeout(function () {
+    // Resolve = success, Reject = failure
+    if (Math.random() >= 0.5) resolve("Congrats you won");
+    else reject(new Error("Sorry you lost lottery"));
+  }, 3000);
+});
+
+// Consume the Promise
+lotteryPromise
+  .then((response) => {
+    // Runs when resolve() is called
+    console.log(response);
+  })
+  .catch((err) => {
+    // Runs when reject() is called
+    console.error(err);
+  });
+
+// Promisifying an async task (image loading)
+function loadImage(src) {
+  return new Promise((resolve, reject) => {
+    // Create image element
+    const img = document.createElement("img");
+    img.src = src;
+
+    // Resolve when image loads successfully
+    img.onload = () => resolve(img);
+
+    // Reject when image fails to load
+    img.onerror = () => reject(new Error("Failed to load img"));
+  });
+}
+
+// Consume the Promise
+loadImage("./photo.jpg")
+  .then((img) => {
+    // Runs on successful load
+    console.log(img);
+  })
+  .catch((err) => {
+    // Runs if loading fails
+    console.error(err);
+  });
