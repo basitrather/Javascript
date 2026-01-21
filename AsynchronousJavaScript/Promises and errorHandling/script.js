@@ -85,12 +85,32 @@ function loadImage(src) {
 }
 
 // Consume the Promise
-loadImage("./photo.jpg")
+loadImage("")
   .then((img) => {
     // Runs on successful load
     console.log(img);
   })
   .catch((err) => {
     // Runs if loading fails
+    console.error(err);
+  });
+
+// Promisifying the Geolocation API
+const getLocation = function () {
+  return new Promise((resolve, reject) => {
+    // resolve → success callback, reject → error callback
+    navigator.geolocation.getCurrentPosition(resolve, reject);
+  });
+};
+
+// Consume the Promise
+getLocation()
+  .then((loc) => {
+    // Extract coordinates from the position object
+    const { longitude, latitude } = loc.coords;
+    console.log(longitude, latitude);
+  })
+  .catch((err) => {
+    // Runs if user denies permission or location fails
     console.error(err);
   });
