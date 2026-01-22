@@ -1,0 +1,17 @@
+{
+  "name": "modulesinjs",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "leaflet": "^1.9.4",
+    "lodash-es": "^4.17.23"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.3"
+  }
+}
