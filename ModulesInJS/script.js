@@ -1,4 +1,5 @@
 // Importing a named export (must use same name)
+// import { greetings } from "./welcomeMessege.js";
 import { greetings } from "./welcomeMessege.js";
 
 // Importing the default export (name can be anything)
@@ -15,3 +16,7 @@ greetings("Basit", "Rather");
 
 // Using default export
 YourUserName("Faisal", "Harray");
+
+if (module.hot) {
+  module.hot.accept();
+}
